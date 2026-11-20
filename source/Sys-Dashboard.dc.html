@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Street Boys OS — Owner dashboard</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0E0E}
+a{color:#D4AF37}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0E0E0E;font-size:14px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.p{background:#171513;border:1px solid rgba(212,175,55,.28);border-radius:8px}
+.m{color:#B8AE98}
+.nav a{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border-radius:6px;color:#D9D2C1;text-decoration:none;font-weight:600}
+.nav a:hover{background:#221E18}
+.nav a.on{background:#D4AF37;color:#0B0B0B}
+.b{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:6px;border:1.5px solid #E6C25A;background:transparent;color:#F5F1E6;font:700 12px 'Montserrat';letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.bg{background:#D4AF37;color:#0B0B0B}
+.chip{font:700 11px 'Montserrat';letter-spacing:.06em;padding:4px 8px;border-radius:4px;white-space:nowrap}
+.kpi{padding:18px 20px}
+.kpi .v{font-family:'Oswald',sans-serif;font-size:38px;line-height:1.1;margin-top:6px}
+.bar{background:#D4AF37;border-radius:3px 3px 0 0;width:100%}
+.li{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(212,175,55,.14)}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:100%;min-height:100vh;display:flex;flex-wrap:wrap">
+<aside style="flex:1 1 220px;max-width:250px;min-width:0;background:#0A0A0A;border-right:1px solid rgba(212,175,55,.25);padding:22px 14px;box-sizing:border-box">
+<img src="/_blob/a71b4a949fb1790e6e0dbdf484cbdf18" alt="Street Boys" style="height:52px;width:auto;display:block;margin:0 0 6px 8px">
+<p class="m" style="margin:0 0 22px 10px;font-size:11px;letter-spacing:.14em">RESTAURANT OS · KAUPPAHALLI</p>
+<nav class="nav" aria-label="System" style="display:flex;flex-direction:column;gap:4px">
+<a class="on" href="Sys-Dashboard.dc.html">Dashboard</a>
+<a href="Sys-POS.dc.html">Till / POS</a>
+<a href="Sys-Kitchen.dc.html">Kitchen display</a>
+<a href="Sys-FrontDesk.dc.html">Tables &amp; bookings</a>
+<a href="Sys-Delivery.dc.html">Delivery</a>
+<a href="Sys-MenuAdmin.dc.html">Menu &amp; stock</a>
+<a href="#crm">Customers &amp; Cult Club</a>
+<a href="#alerts">Catering requests</a>
+<a href="#staff">Staff &amp; shifts</a>
+<a href="#sales">Reports</a>
+</nav>
+<div class="p" style="margin-top:24px;padding:14px">
+<p class="m" style="margin:0;font-size:12px">Signed in as</p>
+<p style="margin:4px 0 0;font-weight:700">Owner · Erkki</p>
+<p class="m" style="margin:2px 0 0;font-size:12px">Role: Admin</p>
+</div>
+</aside>
+
+<main style="flex:999 1 560px;min-width:0;padding:26px 28px;box-sizing:border-box">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px">
+<div>
+<h1 class="os" style="margin:0;font-size:34px">Good evening, Erkki</h1>
+<p class="m" style="margin:4px 0 0">Friday 27 November · Open 15:00–22:00 · <span style="color:#5FD08A;font-weight:700">● Open now</span></p>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<label for="range" style="position:absolute;left:-9999px">Range</label>
+<select id="range" style="min-height:44px;background:#171513;color:#F5F1E6;border:1px solid rgba(212,175,55,.4);border-radius:6px;padding:0 12px;font:600 13px 'Montserrat'"><option>Today</option><option>This week</option><option>This month</option></select>
+<button class="b" type="button">Pause online orders</button>
+<button class="b bg" type="button">Export report</button>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:22px">
+<div class="p kpi"><span class="m" style="font-size:12px;letter-spacing:.1em">NET SALES TODAY</span><div class="v" style="color:#D4AF37">€1,846</div><span style="color:#5FD08A;font-size:13px;font-weight:600">▲ 12% vs last Fri</span></div>
+<div class="p kpi"><span class="m" style="font-size:12px;letter-spacing:.1em">ORDERS</span><div class="v">132</div><span class="m" style="font-size:13px">Avg ticket €13.98</span></div>
+<div class="p kpi"><span class="m" style="font-size:12px;letter-spacing:.1em">TABLES TONIGHT</span><div class="v">14 <span style="font-size:20px" class="m">/ 52 covers</span></div><span class="m" style="font-size:13px">3 walk-ins seated</span></div>
+<div class="p kpi"><span class="m" style="font-size:12px;letter-spacing:.1em">AVG KITCHEN TIME</span><div class="v">9:40</div><span style="color:#E8A94D;font-size:13px;font-weight:600">4 tickets over 12 min</span></div>
+<div class="p kpi"><span class="m" style="font-size:12px;letter-spacing:.1em">DELIVERIES OUT</span><div class="v">5</div><span class="m" style="font-size:13px">2 drivers · ETA avg 16 min</span></div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:16px">
+<section id="sales" class="p" style="flex:2 1 520px;min-width:0;padding:20px" aria-label="Sales by hour">
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px"><h2 class="os" style="margin:0;font-size:20px">Sales by hour</h2><span class="m" style="font-size:13px"><span style="display:inline-block;width:10px;height:10px;background:#D4AF37;border-radius:2px"></span> Today &nbsp; <span style="display:inline-block;width:10px;height:10px;background:#5A4F37;border-radius:2px"></span> Last Friday</span></div>
+<div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:14px;align-items:end;height:220px;margin-top:20px;border-bottom:1px solid rgba(212,175,55,.3)">
+<sc-for list="{{ hours }}" as="h" hint-placeholder-count="8"><div style="display:flex;gap:4px;align-items:flex-end;height:100%"><div style="flex:1;background:#5A4F37;border-radius:3px 3px 0 0;height:{{ h.prev }}"></div><div class="bar" style="flex:1;height:{{ h.now }}"></div></div></sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:14px;margin-top:8px;text-align:center" class="m"><sc-for list="{{ hours }}" as="h" hint-placeholder-count="8"><span style="font-size:12px">{{ h.l }}</span></sc-for></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:20px">
+<div><span class="m" style="font-size:12px">Counter / POS</span><p class="os" style="margin:2px 0 0;font-size:22px">€812 · 44%</p></div>
+<div><span class="m" style="font-size:12px">Website &amp; app</span><p class="os" style="margin:2px 0 0;font-size:22px">€621 · 34%</p></div>
+<div><span class="m" style="font-size:12px">Table QR</span><p class="os" style="margin:2px 0 0;font-size:22px">€268 · 14%</p></div>
+<div><span class="m" style="font-size:12px">Wolt / Foodora</span><p class="os" style="margin:2px 0 0;font-size:22px">€145 · 8%</p></div>
+</div>
+</section>
+
+<section class="p" style="flex:1 1 300px;min-width:0;padding:20px" aria-label="Live orders">
+<div style="display:flex;justify-content:space-between;align-items:center"><h2 class="os" style="margin:0;font-size:20px">Live orders</h2><span class="chip" style="background:rgba(95,208,138,.15);color:#7FDCA2">● LIVE</span></div>
+<div class="li"><span class="chip" style="background:#2B2414;color:#D4AF37">#1052</span><div style="flex:1"><strong>Web · Pickup</strong><br><span class="m" style="font-size:12px">2× El Classico, Ranskalaiset</span></div><span class="chip" style="background:rgba(232,169,77,.15);color:#F0B860">COOKING</span></div>
+<div class="li"><span class="chip" style="background:#2B2414;color:#D4AF37">#1051</span><div style="flex:1"><strong>Table 6 · QR</strong><br><span class="m" style="font-size:12px">Pizza Smash, Chipokana…</span></div><span class="chip" style="background:rgba(111,168,220,.15);color:#8DBCE6">NEW</span></div>
+<div class="li"><span class="chip" style="background:#2B2414;color:#D4AF37">#1047</span><div style="flex:1"><strong>App · Delivery</strong><br><span class="m" style="font-size:12px">Mikko · 1.1 km away</span></div><span class="chip" style="background:rgba(212,175,55,.15);color:#D4AF37">ON ROAD</span></div>
+<div class="li"><span class="chip" style="background:#2B2414;color:#D4AF37">#1049</span><div style="flex:1"><strong>Counter · Eat in</strong><br><span class="m" style="font-size:12px">Old London Smash ×3</span></div><span class="chip" style="background:rgba(95,208,138,.15);color:#7FDCA2">READY</span></div>
+<div class="li" style="border:none"><span class="chip" style="background:#2B2414;color:#D4AF37">#1050</span><div style="flex:1"><strong>Wolt · Delivery</strong><br><span class="m" style="font-size:12px">Courier arriving 2 min</span></div><span class="chip" style="background:rgba(232,169,77,.15);color:#F0B860">COOKING</span></div>
+<a class="b" href="Sys-Kitchen.dc.html" style="width:100%;margin-top:10px;box-sizing:border-box">Open kitchen display</a>
+</section>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:16px">
+<section class="p" style="padding:20px" aria-label="Top items">
+<h2 class="os" style="margin:0 0 6px;font-size:20px">Top items today</h2>
+<sc-for list="{{ top }}" as="t" hint-placeholder-count="5"><div style="padding:9px 0"><div style="display:flex;justify-content:space-between"><span style="font-weight:600">{{ t.n }}</span><span class="m">{{ t.q }} sold</span></div><div style="height:6px;background:#2A2620;border-radius:3px;margin-top:6px"><div style="height:6px;background:#D4AF37;border-radius:3px;width:{{ t.w }}"></div></div></div></sc-for>
+</section>
+<section id="alerts" class="p" style="padding:20px" aria-label="Alerts">
+<h2 class="os" style="margin:0 0 6px;font-size:20px">Needs attention</h2>
+<div class="li"><span class="chip" style="background:rgba(229,96,77,.15);color:#F08A79">LOW STOCK</span><span style="flex:1">Potato brioche buns · 38 left</span><a href="Sys-MenuAdmin.dc.html">Reorder</a></div>
+<div class="li"><span class="chip" style="background:rgba(229,96,77,.15);color:#F08A79">LOW STOCK</span><span style="flex:1">Halloumi · 1.2 kg</span><a href="Sys-MenuAdmin.dc.html">Reorder</a></div>
+<div class="li"><span class="chip" style="background:rgba(212,175,55,.15);color:#D4AF37">CATERING</span><span style="flex:1">Kymi Events Oy · 150 guests · 6 Jun</span><a href="Web-Catering.dc.html#quote">Quote</a></div>
+<div class="li"><span class="chip" style="background:rgba(111,168,220,.15);color:#8DBCE6">BOOKING</span><span style="flex:1">Private room request · Sat 5 Dec</span><a href="Sys-FrontDesk.dc.html">Review</a></div>
+<div class="li" style="border:none"><span class="chip" style="background:rgba(232,169,77,.15);color:#F0B860">REVIEW</span><span style="flex:1">New 3★ review on Google</span><a href="https://business.google.com/">Reply</a></div>
+</section>
+<section id="staff" class="p" style="padding:20px" aria-label="Staff on shift">
+<h2 class="os" style="margin:0 0 6px;font-size:20px">On shift now</h2>
+<div class="li"><span class="os" style="width:36px;height:36px;border-radius:50%;background:#2A2620;display:flex;align-items:center;justify-content:center;color:#D4AF37">J</span><span style="flex:1"><strong>Jere</strong> · Grill</span><span class="m">since 14:30</span></div>
+<div class="li"><span class="os" style="width:36px;height:36px;border-radius:50%;background:#2A2620;display:flex;align-items:center;justify-content:center;color:#D4AF37">S</span><span style="flex:1"><strong>Sanni</strong> · Cashier</span><span class="m">since 14:45</span></div>
+<div class="li"><span class="os" style="width:36px;height:36px;border-radius:50%;background:#2A2620;display:flex;align-items:center;justify-content:center;color:#D4AF37">A</span><span style="flex:1"><strong>Aleksi</strong> · Fryer / pass</span><span class="m">since 15:00</span></div>
+<div class="li" style="border:none"><span class="os" style="width:36px;height:36px;border-radius:50%;background:#2A2620;display:flex;align-items:center;justify-content:center;color:#D4AF37">M</span><span style="flex:1"><strong>Mikko</strong> · Driver</span><span style="color:#D4AF37;font-weight:600">On delivery</span></div>
+<p class="m" style="margin:10px 0 0;font-size:13px">Labour today €312 · 16.9% of sales</p>
+</section>
+</div>
+
+<section id="crm" class="p" style="padding:20px;margin-top:16px" aria-label="Cult Club and campaigns">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px"><h2 class="os" style="margin:0;font-size:20px">Cult Club &amp; campaigns</h2><button class="b bg" type="button">New push campaign</button></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:16px">
+<div><span class="m" style="font-size:12px">MEMBERS</span><p class="os" style="margin:2px 0 0;font-size:28px">2,418</p><span style="color:#5FD08A;font-size:13px">+64 this week</span></div>
+<div><span class="m" style="font-size:12px">REPEAT RATE (30 D)</span><p class="os" style="margin:2px 0 0;font-size:28px">41%</p></div>
+<div><span class="m" style="font-size:12px">POINTS REDEEMED</span><p class="os" style="margin:2px 0 0;font-size:28px">€386</p><span class="m" style="font-size:13px">this month</span></div>
+<div><span class="m" style="font-size:12px">LAST PUSH · “NEW DROP: OLD LONDON”</span><p class="os" style="margin:2px 0 0;font-size:28px">18% open · 74 orders</p></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px">
+<span class="chip" style="background:#221E18;color:#D9D2C1;padding:8px 12px">Segment: Gold members · 312</span>
+<span class="chip" style="background:#221E18;color:#D9D2C1;padding:8px 12px">Segment: Lapsed 60 days · 486</span>
+<span class="chip" style="background:#221E18;color:#D9D2C1;padding:8px 12px">Segment: Birthdays this month · 91</span>
+<span class="chip" style="background:#221E18;color:#D9D2C1;padding:8px 12px">Segment: Halloumi lovers · 205</span>
+</div>
+</section>
+<p class="m" style="margin:16px 0 0;font-size:12px">All figures are sample data for the mockup.</p>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+renderVals() {
+const now=[8,22,46,58,92,100,74,40], prev=[10,18,38,62,80,86,70,44], l=['15','16','17','18','19','20','21','22'];
+const hours = l.map((x,i)=>({ l: x+':00', now: now[i]+'%', prev: prev[i]+'%' }));
+const top = [['El Classico',38],['Erkin S#%tana',27],['Loaded Fries Chipotle',24],['Old London Smash',19],['Chipohalloumi',14]].map(([n,q])=>({ n:n, q:q, w: Math.round(q/38*100)+'%' }));
+return { hours: hours, top: top };
+}
+}
+</script>
+</body>
+</html>

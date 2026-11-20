@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street Boys OS — Tables &amp; bookings</title>
+<link rel="icon" href="../assets/img/logo-gold.svg">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>body{background:#050505}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<helmet>
+<style>
+body{margin:0;background:#0E0E0E}
+a{color:#D4AF37}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0E0E0E;font-size:14px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.p{background:#171513;border:1px solid rgba(212,175,55,.28);border-radius:8px}
+.m{color:#B8AE98}
+.b{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:6px;border:1.5px solid #E6C25A;background:transparent;color:#F5F1E6;font:700 12px 'Montserrat';letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.bg{background:#D4AF37;color:#0B0B0B}
+.chip{font:700 11px 'Montserrat';letter-spacing:.06em;padding:4px 8px;border-radius:4px;white-space:nowrap}
+.tb{position:absolute;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;cursor:pointer;font-family:'Montserrat';color:#F5F1E6}
+.rv{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(212,175,55,.14)}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:100%;min-height:100vh;display:flex;flex-direction:column">
+<header style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:12px 22px;border-bottom:1px solid rgba(212,175,55,.3);background:#0A0A0A">
+<a href="Sys-Dashboard.html"><img src="../assets/img/logo-gold.svg" alt="Street Boys — back to dashboard" style="height:40px;width:auto;display:block"></a>
+<span class="os" style="font-size:22px;color:#D4AF37">Front desk · Tables &amp; bookings</span>
+<div style="margin-left:auto;display:flex;gap:10px;flex-wrap:wrap">
+<button class="b" type="button">‹ Thu</button><button class="b bg" type="button">Fri 27 Nov</button><button class="b" type="button">Sat ›</button>
+<button class="b" type="button">+ Walk-in</button><button class="b bg" type="button">+ New booking</button>
+</div>
+</header>
+<div style="flex:1;display:flex;flex-wrap:wrap;gap:16px;padding:18px 22px;align-items:flex-start">
+<section class="p" style="flex:999 1 620px;min-width:0;padding:18px" aria-label="Floor plan">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center">
+<h2 class="os" style="margin:0;font-size:20px">Floor plan · Kauppahalli</h2>
+<div style="display:flex;flex-wrap:wrap;gap:14px;font-size:13px">
+<span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#24382B;border:1.5px solid #5FD08A"></span> Free</span>
+<span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#3A2E14;border:1.5px solid #E6C25A"></span> Seated</span>
+<span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#1E2C3A;border:1.5px solid #6FA8DC"></span> Reserved soon</span>
+<span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#3A1E1A;border:1.5px solid #E5604D"></span> Bill requested</span>
+</div>
+</div>
+<div style="overflow-x:auto;margin-top:16px">
+<div style="position:relative;width:840px;height:560px;border:1px dashed rgba(212,175,55,.3);border-radius:8px;background:#121110">
+<div style="position:absolute;left:20px;top:20px;width:300px;height:56px;border-radius:6px;background:#221E18;display:flex;align-items:center;justify-content:center" class="os m">Counter · Till · Pass</div>
+<div style="position:absolute;right:20px;top:20px;width:220px;height:150px;border:1.5px dashed #6E6656;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center" class="m">Private room<br>Booked 19:30 · 14 pax</div>
+<div style="position:absolute;left:20px;bottom:20px;font-size:12px" class="m">Entrance ↓ Kauppahalli hall</div>
+<sc-for list="{{ tables }}" as="t" hint-placeholder-count="12"><button type="button" class="tb" style="left:{{ t.x }};top:{{ t.y }};width:{{ t.w }};height:{{ t.h }};background:{{ t.bg }};border:2px solid {{ t.bd }}"><span class="os" style="font-size:20px">{{ t.n }}</span><span style="font-size:11px;font-weight:600">{{ t.info }}</span></button></sc-for>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px">
+<div><span class="m" style="font-size:12px">SEATED NOW</span><p class="os" style="margin:2px 0 0;font-size:24px">26 guests · 7 tables</p></div>
+<div><span class="m" style="font-size:12px">ARRIVING NEXT HOUR</span><p class="os" style="margin:2px 0 0;font-size:24px">5 bookings · 18</p></div>
+<div><span class="m" style="font-size:12px">WAITLIST</span><p class="os" style="margin:2px 0 0;font-size:24px">2 parties · ~15 min</p></div>
+</div>
+</section>
+
+<aside style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<section class="p" style="padding:18px" aria-label="Tonight's bookings">
+<div style="display:flex;justify-content:space-between;align-items:center"><h2 class="os" style="margin:0;font-size:20px">Tonight · 14 bookings</h2><span class="m" style="font-size:12px">web · app · phone</span></div>
+<sc-for list="{{ res }}" as="r" hint-placeholder-count="7"><div class="rv"><span class="os" style="font-size:20px;min-width:54px;color:#D4AF37">{{ r.t }}</span><div style="flex:1;min-width:0"><strong>{{ r.n }}</strong> · {{ r.p }} pax<br><span class="m" style="font-size:12px">{{ r.note }}</span></div><span class="chip" style="background:{{ r.cbg }};color:{{ r.cfg }}">{{ r.st }}</span></div></sc-for>
+</section>
+<section class="p" style="padding:18px" aria-label="Waitlist">
+<h2 class="os" style="margin:0 0 6px;font-size:20px">Waitlist</h2>
+<div class="rv"><div style="flex:1"><strong>Laura</strong> · 3 pax<br><span class="m" style="font-size:12px">Waiting 6 min · SMS when ready</span></div><button class="b" type="button" style="min-height:40px">Seat · T5</button></div>
+<div class="rv" style="border:none"><div style="flex:1"><strong>Joni</strong> · 2 pax<br><span class="m" style="font-size:12px">Waiting 2 min</span></div><button class="b" type="button" style="min-height:40px">Notify</button></div>
+</section>
+</aside>
+</div>
+</div>
+</script>
+<script type="text/x-dc-logic" id="dc-logic" data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+renderVals() {
+const S={free:['#24382B','#5FD08A'],seat:['#3A2E14','#D4AF37'],res:['#1E2C3A','#6FA8DC'],bill:['#3A1E1A','#E5604D']};
+const T=(n,x,y,w,h,s,info)=>({n:n,x:x+'px',y:y+'px',w:w+'px',h:h+'px',bg:S[s][0],bd:S[s][1],info:info});
+const tables=[T('T1',40,120,90,90,'seat','2 · 34 min'),T('T2',160,120,90,90,'seat','4 · 12 min'),T('T3',280,120,90,90,'free','2 seats'),
+T('T4',40,250,90,90,'res','18:45 Virtanen'),T('T5',160,250,90,90,'free','4 seats'),T('T6',280,250,90,90,'seat','4 · 8 min'),
+T('T7',40,380,90,90,'bill','3 · bill'),T('T8',160,380,90,90,'seat','2 · 41 min'),T('T9',280,380,90,90,'res','19:00 Korhonen'),
+T('B1',440,220,160,80,'seat','Booth · 6 · 20 min'),T('B2',440,330,160,80,'res','Booth · 18:30 Lahti'),T('BAR',640,220,160,190,'seat','Bar · 5 of 8 seats')];
+const C={Arrived:['rgba(95,208,138,.15)','#7FDCA2'],Confirmed:['rgba(111,168,220,.15)','#8DBCE6'],Late:['rgba(229,96,77,.15)','#F08A79'],Deposit:['rgba(212,175,55,.15)','#D4AF37']};
+const R=(t,n,p,note,st)=>({t:t,n:n,p:p,note:note,st:st.toUpperCase(),cbg:C[st][0],cfg:C[st][1]});
+const res=[R('18:15','Nieminen',4,'Booth · app booking','Arrived'),R('18:30','Lahti',6,'Birthday · cake at 19:30','Late'),R('18:45','Virtanen',4,'Gluten-free ×1 · pre-ordered food','Confirmed'),
+R('19:00','Korhonen',2,'Cult Gold member','Confirmed'),R('19:30','Mäkinen Oy',14,'Private room · set menu','Deposit'),R('19:30','Salo',3,'Phone booking','Confirmed'),R('20:00','Heikkinen',5,'High chair','Confirmed')];
+return { tables: tables, res: res };
+}
+}
+</script>
+<script src="../assets/dc-runtime.js"></script>
+</body>
+</html>

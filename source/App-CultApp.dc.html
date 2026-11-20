@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cult App — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0B0B}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B;font-size:14px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.m{color:#B8AE98}
+.tile{min-height:84px;border:1px solid rgba(212,175,55,.45);border-radius:12px;background:#14110D;color:#F5F1E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font:600 12px 'Montserrat';text-decoration:none}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font:600 11px 'Montserrat';color:#B8AE98;text-decoration:none;min-height:56px;justify-content:center}
+.tab.on{color:#D4AF37}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:390px;height:844px;display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box">
+<div style="flex:1;overflow:hidden;padding:20px 18px 0;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<img src="/_blob/a71b4a949fb1790e6e0dbdf484cbdf18" alt="Street Boys" style="height:44px;width:auto">
+<button type="button" aria-label="Notifications" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,.5);background:transparent;display:flex;align-items:center;justify-content:center;position:relative"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span style="position:absolute;top:8px;right:9px;width:8px;height:8px;border-radius:50%;background:#E5604D"></span></button>
+</div>
+<p style="margin:0;font-size:18px">Moi, <strong>Teemu</strong></p>
+<div id="card" style="border:1.5px solid #E6C25A;border-radius:16px;padding:18px;background:#1B160D;display:flex;justify-content:space-between;gap:12px">
+<div><p class="m" style="margin:0;font-size:11px;letter-spacing:.14em">CULT CARD</p><p class="cz" style="margin:4px 0 0;font-family:'Cinzel',serif;font-size:30px;font-weight:800;color:#D4AF37">GOLD</p><p style="margin:10px 0 0;font-size:13px">1,240 points · <span style="color:#D4AF37">€12 reward ready</span></p><div style="height:6px;width:180px;background:#3A3020;border-radius:3px;margin-top:8px"><div style="height:6px;width:70%;background:#D4AF37;border-radius:3px"></div></div><p class="m" style="margin:6px 0 0;font-size:11px">260 pts to Platinum</p></div>
+<div style="width:86px;height:86px;background:#F5F1E6;border-radius:8px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;padding:8px;box-sizing:border-box" role="img" aria-label="Member QR code to scan at the till"><sc-for list="{{ qr }}" as="c" hint-placeholder-count="25"><span style="background:{{ c }}"></span></sc-for></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+<a class="tile" href="App-CustomerTrack.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6" aria-hidden="true"><path d="M4 11h16a8 7 0 0 0-16 0Z"/><path d="M3 14h18"/><path d="M4 17h16v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/></svg>Order</a>
+<a class="tile" href="Web-Reserve.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Book table</a>
+<a class="tile" href="#card"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6" aria-hidden="true"><path d="M6 4h12l3 5-9 11L3 9Z"/><path d="M3 9h18"/></svg>Rewards</a>
+<a class="tile" href="#drop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4Z"/></svg>Deals</a>
+<a class="tile" href="Web-Catering.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Food truck</a>
+<a class="tile" href="#card"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Account</a>
+</div>
+<a href="App-CustomerTrack.dc.html" style="display:flex;gap:12px;align-items:center;border-radius:12px;padding:12px;background:#D4AF37;color:#0B0B0B;text-decoration:none"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="2" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/></svg><span style="flex:1"><strong>Order #1047 on the way</strong><br><span style="font-size:12px">Mikko · arriving in 12 min</span></span><span style="font-weight:800">›</span></a>
+<a id="drop" href="Web-Menu.dc.html" style="display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(212,175,55,.45);position:relative;height:150px;color:#F5F1E6;text-decoration:none">
+<img src="/_blob/ba4e0d72d87a6745741eb981e2fc6cb7" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,11,.92),rgba(11,11,11,.2));padding:14px;display:flex;flex-direction:column;justify-content:flex-end">
+<span style="font:700 10px 'Montserrat';letter-spacing:.14em;color:#D4AF37">CULT MEMBERS FIRST</span>
+<span class="os" style="font-size:22px;line-height:1.1">New drop:<br>Old London Smash</span>
+</div>
+</a>
+</div>
+<nav aria-label="App" style="display:flex;border-top:1px solid rgba(212,175,55,.3);background:#0E0E0E;padding:4px 6px 10px">
+<a class="tab on" href="App-CultApp.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7v9H3z"/></svg>Home</a>
+<a class="tab" href="Web-Menu.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Menu</a>
+<a class="tab" href="App-CustomerTrack.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6h15l-2 9H8Z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>Orders</a>
+<a class="tab" href="Web-Reserve.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>Bookings</a>
+<a class="tab" href="#card"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Me</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+const p = '1110110010101111001110101';
+return { qr: p.split('').map(b => b === '1' ? '#0B0B0B' : 'transparent') };
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street Boys — Book a table</title>
+<link rel="icon" href="../assets/img/logo-gold.svg">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>body{background:#050505}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<helmet>
+<style>
+body{margin:0;background:#0B0B0B}
+a{color:#D4AF37}a:hover{color:#F0CF62}
+.sb{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B}
+.cz{font-family:'Cinzel',Georgia,serif}
+.os{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:4px;font:700 13px/1 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1.5px solid #E6C25A;box-sizing:border-box}
+.btn-g{background:#D4AF37;color:#0B0B0B}.btn-g:hover{background:#E6C350;color:#0B0B0B}
+.btn-o{background:transparent;color:#F5F1E6}
+.card{border:1px solid rgba(212,175,55,.5);background:#14110D;border-radius:6px}
+.nav a{color:#F5F1E6;text-decoration:none;font:600 13px 'Montserrat',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:12px 4px}
+.nav a:hover{color:#D4AF37}
+.muted{color:#C9BFA8}
+.day{height:48px;border-radius:4px;border:1px solid rgba(212,175,55,.3);background:transparent;color:#F5F1E6;font:600 15px 'Montserrat';cursor:pointer}
+.day.off{color:#6E6656;border-color:#2A2A2A;cursor:not-allowed;text-decoration:line-through}
+.day.sel{background:#D4AF37;color:#0B0B0B;border-color:#D4AF37}
+.day.blank{visibility:hidden}
+.slot{min-height:46px;border-radius:4px;border:1px solid rgba(212,175,55,.45);background:transparent;color:#F5F1E6;font:600 15px 'Montserrat';cursor:pointer}
+.slot.sel{background:#D4AF37;color:#0B0B0B}
+.slot.full{color:#6E6656;border-color:#2A2A2A;text-decoration:line-through}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.fld input,.fld textarea{min-height:46px;background:#0B0B0B;border:1px solid rgba(212,175,55,.45);border-radius:4px;color:#F5F1E6;font:500 15px 'Montserrat';padding:0 14px}
+.fld textarea{padding:12px 14px;min-height:84px}
+
+.lng{min-height:40px;min-width:44px;background:transparent;color:#C9BFA8;border:none;font:700 12px 'Montserrat',sans-serif;letter-spacing:.1em;cursor:pointer}.lng.on{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%);color:#0B0B0B}
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="sb" style="width:100%;min-height:100vh">
+<header style="border-bottom:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+<a href="home.html" style="display:flex;align-items:center;gap:12px;text-decoration:none"><img src="../assets/img/logo-gold.svg" alt="Street Boys — It’s not a cult" style="height:56px;width:auto;display:block"></a>
+<nav class="nav" aria-label="Main" style="display:flex;flex-wrap:wrap;gap:22px"><a href="home.html">{{ t.k0 }}</a><a href="Web-Menu.html">{{ t.k1 }}</a><a href="Web-Catering.html">{{ t.k3 }}</a><a href="home.html">{{ t.k5 }}</a></nav>
+<a class="btn btn-g" href="Web-Checkout.html">{{ t.k7 }}</a>
+<div role="group" aria-label="Language / Kieli" style="display:flex;border:1px solid rgba(212,175,55,.55);border-radius:4px;overflow:hidden"><button type="button" class="{{ fiCls }}" aria-pressed="{{ isFi }}" onClick="{{ setFi }}">FI</button><button type="button" class="{{ enCls }}" aria-pressed="{{ isEn }}" onClick="{{ setEn }}">EN</button></div>
+</div>
+</header>
+
+<section style="max-width:1280px;margin:0 auto;padding:48px 32px 80px">
+<p style="margin:0;font:600 13px 'Montserrat';letter-spacing:.18em;color:#D4AF37">{{ t.k137 }}</p>
+<h1 class="os" style="margin:10px 0 0;font-size:56px;line-height:1">{{ t.k138 }}</h1>
+<p class="muted" style="margin:10px 0 32px;font-size:16px">{{ t.k139 }} <a href="Web-Catering.html">{{ t.k140 }}</a>.</p>
+
+<div style="display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">
+<div style="flex:999 1 640px;min-width:0;display:flex;flex-direction:column;gap:24px">
+
+<div class="card" style="padding:24px">
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center">
+<h2 class="os" style="margin:0;font-size:22px;color:#D4AF37">{{ t.k141 }}</h2>
+<div style="display:flex;align-items:center;gap:14px">
+<button class="slot" type="button" aria-label="Fewer guests" style="width:46px">−</button>
+<span class="os" style="font-size:30px;min-width:90px;text-align:center">{{ t.k142 }}</span>
+<button class="slot" type="button" aria-label="More guests" style="width:46px">+</button>
+</div>
+</div>
+</div>
+
+<div class="card" style="padding:24px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+<h2 class="os" style="margin:0;font-size:22px;color:#D4AF37">{{ t.k143 }}</h2>
+<div style="display:flex;align-items:center;gap:10px"><button class="slot" type="button" aria-label="Previous month" style="width:46px">‹</button><span class="os" style="font-size:20px;min-width:160px;text-align:center">{{ t.k144 }}</span><button class="slot" type="button" aria-label="Next month" style="width:46px">›</button></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:18px;text-align:center;font:700 12px 'Montserrat';letter-spacing:.1em;color:#C9BFA8">
+<span>{{ t.k145 }}</span><span>{{ t.k146 }}</span><span>{{ t.k147 }}</span><span>{{ t.k148 }}</span><span>{{ t.k149 }}</span><span>{{ t.k150 }}</span><span>{{ t.k151 }}</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:8px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="35"><button type="button" class="{{ d.cls }}">{{ d.n }}</button></sc-for>
+</div>
+<p class="muted" style="margin:14px 0 0;font-size:13px">{{ t.k152 }}</p>
+</div>
+
+<div class="card" style="padding:24px">
+<h2 class="os" style="margin:0;font-size:22px;color:#D4AF37">{{ t.k153 }}</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;margin-top:18px">
+<button class="slot" type="button">15:00</button><button class="slot" type="button">15:30</button><button class="slot" type="button">16:00</button><button class="slot full" type="button" disabled>16:30</button><button class="slot" type="button">17:00</button><button class="slot full" type="button" disabled>17:30</button><button class="slot full" type="button" disabled>18:00</button><button class="slot sel" type="button" aria-pressed="true">18:30</button><button class="slot" type="button">19:00</button><button class="slot" type="button">19:30</button><button class="slot" type="button">20:00</button><button class="slot" type="button">20:30</button>
+</div>
+<p class="muted" style="margin:14px 0 0;font-size:13px">{{ t.k154 }}</p>
+</div>
+
+<div class="card" style="padding:24px">
+<h2 class="os" style="margin:0 0 18px;font-size:22px;color:#D4AF37">{{ t.k155 }}</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+<label class="fld">{{ t.k156 }}<input value="Teemu Virtanen"></label>
+<label class="fld">{{ t.k157 }}<input value="+358 40 000 0000"></label>
+<label class="fld">{{ t.k158 }}<input value="teemu@example.fi"></label>
+<label class="fld">{{ t.k159 }}<input value="Booth if possible"></label>
+</div>
+<label class="fld" style="margin-top:16px">{{ t.k160 }}<textarea>Birthday — one of us is gluten-free</textarea></label>
+<label style="display:flex;gap:10px;align-items:center;margin-top:16px;font-size:14px"><input type="checkbox" checked style="width:20px;height:20px;accent-color:#D4AF37">{{ t.k161 }}</label>
+</div>
+</div>
+
+<aside class="card" style="flex:1 1 320px;min-width:0;padding:26px;border-color:#D4AF37" aria-label="Booking summary">
+<h2 class="cz" style="margin:0;font-size:24px;color:#D4AF37">{{ t.k162 }}</h2>
+<dl style="margin:20px 0 0;display:grid;grid-template-columns:auto 1fr;gap:12px 16px;font-size:15px">
+<dt class="muted">{{ t.k163 }}</dt><dd style="margin:0;text-align:right;font-weight:600">4</dd>
+<dt class="muted">{{ t.k164 }}</dt><dd style="margin:0;text-align:right;font-weight:600">{{ t.k165 }}</dd>
+<dt class="muted">{{ t.k166 }}</dt><dd style="margin:0;text-align:right;font-weight:600">18:30 – 20:00</dd>
+<dt class="muted">{{ t.k167 }}</dt><dd style="margin:0;text-align:right;font-weight:600">Kauppahalli, Kouvola</dd>
+</dl>
+<div style="height:1px;background:rgba(212,175,55,.35);margin:22px 0"></div>
+<p class="muted" style="margin:0 0 18px;font-size:13px;line-height:1.6">{{ t.k168 }}</p>
+<button type="button" class="btn btn-g" style="width:100%" onClick="{{ confirm }}">{{ t.k169 }}</button>
+<sc-if value="{{ confirmed }}" hint-placeholder-val="{{ false }}"><div role="status" style="margin-top:14px;border:2px solid #5FD08A;border-radius:6px;padding:14px;background:rgba(95,208,138,.08)"><p style="margin:0;font-weight:700;color:#7FDCA2">{{ t.cf1 }}</p><p class="muted" style="margin:6px 0 0;font-size:13px;line-height:1.5">{{ t.cf2 }}</p></div></sc-if>
+<a class="btn btn-o" href="Web-Menu.html" style="width:100%;margin-top:10px">{{ t.k170 }}</a>
+</aside>
+</div>
+</section>
+</div>
+</script>
+<script type="text/x-dc-logic" id="dc-logic" data-props='{"$preview":{"width":1440,"height":1250}}'>
+class Component extends DCLogic {
+constructor(p) { super(p); this.state = Object.assign({ lang: 'en', confirmed: false }, this.state || {}); }
+componentDidMount() {
+try { const l = window.localStorage.getItem('sb-lang'); if (l && l !== this.state.lang) this.setState({ lang: l }); } catch (e) {}
+try { this._onStore = (e) => { if (e.key === 'sb-lang' && e.newValue) this.setState({ lang: e.newValue }); }; window.addEventListener('storage', this._onStore); } catch (e) {}
+}
+componentWillUnmount() { try { window.removeEventListener('storage', this._onStore); } catch (e) {} }
+setLang(l) { this.setState({ lang: l }); try { window.localStorage.setItem('sb-lang', l); } catch (e) {} }
+dict(fi) { return fi ? {"cf1":"Varaus vahvistettu","cf2":"Nähdään pe 27.11. klo 18.30. Lähetimme vahvistuksen tekstiviestillä ja sähköpostilla.","k166": "Aika", "k153": "3 · Aika · perjantai 27.11.", "k163": "Henkilöt", "k3": "Catering", "k138": "Varaa pöytäsi", "k161": "Olen Cult Club -jäsen — lisää pisteet korttiini", "k152": "Suljettu maanantaisin ja tiistaisin.", "k146": "TI", "k160": "Lisätiedot (allergiat, syntymäpäivät…)", "k142": "4 henkeä", "k164": "Päivä", "k139": "Reaaliaikainen saatavuus. Vahvistus tekstiviestillä ja sähköpostilla — yli 10 hengen ryhmille", "k157": "Puhelin", "k167": "Paikka", "k147": "KE", "k165": "Pe 27.11.2026", "k158": "Sähköposti", "k162": "Yhteenveto", "k148": "TO", "k140": "ryhmävaraus", "k1": "Ruokalista", "k141": "1 · Henkilömäärä", "k5": "Yhteystiedot", "k137": "PÖYTÄVARAUKSET", "k154": "Pöytä on varattu 90 minuutiksi. Yliviivatut ajat ovat täynnä.", "k155": "4 · Yhteystietosi", "k156": "Nimi", "k0": "Etusivu", "k159": "Istumapaikka", "k151": "SU", "k168": "Maksuton peruutus 2 tuntia ennen. Tilaa ruoat etukäteen, niin ne ovat pöydässä kun saavut.", "k143": "2 · Päivä", "k144": "Marraskuu 2026", "k150": "LA", "k145": "MA", "k149": "PE", "k170": "Ennakkotilaa ruoat", "k7": "Tilaa nyt", "k169": "Vahvista varaus"} : {"cf1":"Booking confirmed","cf2":"See you Fri 27 Nov at 18:30. We sent a confirmation by SMS and email.","k166": "Time", "k153": "3 · Time · Friday 27 November", "k163": "Guests", "k3": "Catering", "k138": "Book your table", "k161": "I’m a Cult Club member — add points to my card", "k152": "Closed Mondays and Tuesdays.", "k146": "TUE", "k160": "Notes (allergies, birthdays…)", "k142": "4 guests", "k164": "Date", "k139": "Live availability. Confirmation by SMS and email — groups over 10, use", "k157": "Phone", "k167": "Where", "k147": "WED", "k165": "Fri 27 Nov 2026", "k158": "Email", "k162": "Summary", "k148": "THU", "k140": "group bookings", "k1": "Menu", "k141": "1 · Guests", "k5": "Contact", "k137": "TABLE RESERVATIONS", "k154": "Tables are held for 90 minutes. Struck-through times are fully booked.", "k155": "4 · Your details", "k156": "Name", "k0": "Home", "k159": "Seating", "k151": "SUN", "k168": "Free cancellation until 2 hours before. Pre-order food now and it’s on the table when you arrive.", "k143": "2 · Date", "k144": "November 2026", "k150": "SAT", "k145": "MON", "k149": "FRI", "k170": "Pre-order food", "k7": "Order now", "k169": "Confirm booking"}; }
+renderVals() {
+const fi = (this.state || {}).lang === 'fi';
+return Object.assign({}, this.baseVals(), { t: this.dict(fi), isFi: fi, isEn: !fi, fiCls: fi ? 'lng on' : 'lng', enCls: fi ? 'lng' : 'lng on', confirmed: !!(this.state || {}).confirmed, confirm: () => this.setState({ confirmed: true }), setFi: () => this.setLang('fi'), setEn: () => this.setLang('en') });
+}
+
+baseVals() {
+const days = [];
+for (let i = 0; i < 6; i++) days.push({ n: '', cls: 'day blank' });
+for (let d = 1; d <= 30; d++) {
+const wd = (d + 5) % 7;
+let cls = 'day';
+if (wd <= 1 || d < 20) cls = 'day off';
+if (d === 27) cls = 'day sel';
+days.push({ n: String(d), cls: cls });
+}
+return { days: days };
+}
+}
+</script>
+<script src="../assets/dc-runtime.js"></script>
+</body>
+</html>

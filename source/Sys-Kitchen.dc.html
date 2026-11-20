@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Street Boys OS — Kitchen display</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#080808}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#080808;font-size:15px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.m{color:#B8AE98}
+.tk{background:#161412;border-radius:10px;overflow:hidden;border:1px solid #2E2A22;display:flex;flex-direction:column}
+.bump{min-height:52px;border:none;font:700 14px 'Montserrat';letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.chip{font:700 11px 'Montserrat';letter-spacing:.06em;padding:4px 8px;border-radius:4px}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:100%;min-height:100vh;display:flex;flex-direction:column">
+<header style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:12px 20px;border-bottom:1px solid rgba(212,175,55,.3);background:#0E0E0E">
+<a href="Sys-Dashboard.dc.html"><img src="/_blob/a71b4a949fb1790e6e0dbdf484cbdf18" alt="Street Boys — back to dashboard" style="height:40px;width:auto;display:block"></a>
+<span class="os" style="font-size:22px;color:#D4AF37">Kitchen · Grill station</span>
+<span class="chip" style="background:rgba(111,168,220,.18);color:#8DBCE6">4 NEW</span>
+<span class="chip" style="background:rgba(232,169,77,.18);color:#F0B860">5 COOKING</span>
+<span class="chip" style="background:rgba(95,208,138,.18);color:#7FDCA2">3 READY</span>
+<span style="margin-left:auto" class="m">Avg 9:40 · Target 12:00</span>
+<span class="os" style="font-size:26px">18:34</span>
+</header>
+<div style="padding:12px 20px;border-bottom:1px solid #222;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+<span class="os m" style="font-size:14px">All day:</span>
+<sc-for list="{{ allday }}" as="a" hint-placeholder-count="6"><span style="background:#1E1B16;border:1px solid #3A3426;border-radius:6px;padding:6px 12px;font-weight:600"><span class="os" style="color:#D4AF37;font-size:18px">{{ a.q }}</span> {{ a.n }}</span></sc-for>
+</div>
+<div style="flex:1;display:flex;flex-wrap:wrap;gap:16px;padding:16px 20px;align-items:flex-start">
+<sc-for list="{{ cols }}" as="c" hint-placeholder-count="3">
+<section style="flex:1 1 360px;min-width:0" aria-label="{{ c.t }}">
+<h2 class="os" style="margin:0 0 12px;font-size:18px;color:{{ c.col }}">{{ c.t }} · {{ c.n }}</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px">
+<sc-for list="{{ c.tk }}" as="t" hint-placeholder-count="3">
+<article class="tk" style="border-top:6px solid {{ t.bar }}">
+<div style="padding:12px 14px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+<div><p class="os" style="margin:0;font-size:24px">#{{ t.id }}</p><p class="m" style="margin:2px 0 0;font-size:13px">{{ t.src }}</p></div>
+<span class="os" style="font-size:24px;color:{{ t.bar }}">{{ t.time }}</span>
+</div>
+<ul style="list-style:none;margin:0;padding:0 14px 12px;display:flex;flex-direction:column;gap:8px">
+<sc-for list="{{ t.items }}" as="i" hint-placeholder-count="2"><li><span class="os" style="font-size:18px;color:#D4AF37">{{ i.q }}×</span> <strong style="font-size:16px">{{ i.n }}</strong><sc-if value="{{ i.mod }}" hint-placeholder-val="{{ false }}"><br><span style="color:#F08A79;font-weight:700;font-size:13px">{{ i.mod }}</span></sc-if></li></sc-for>
+</ul>
+<button type="button" class="bump" style="margin-top:auto;background:{{ t.bbg }};color:{{ t.bfg }}">{{ t.btn }}</button>
+</article>
+</sc-for>
+</div>
+</section>
+</sc-for>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+renderVals() {
+const I=(q,n,mod)=>({q:q,n:n,mod:mod||''});
+const T=(id,src,time,items,late)=>({id:id,src:src,time:time,items:items,late:late});
+const newT=[T(1053,'Counter · Eat in · pager 12','0:24',[I(2,'El Classico'),I(1,'Loaded Fries Chipotle')]),
+T(1054,'Web · Pickup 18:50','0:51',[I(1,'Chipohalloumi','GLUTEN-FREE BUN'),I(1,'Halloumitikut')]),
+T(1055,'Table 6 · QR','1:10',[I(1,'Pizza Smash'),I(1,'Chipokana'),I(2,'Ranskalaiset')]),
+T(1056,'Wolt · Delivery','1:32',[I(1,'Old London Smash','NO ONION')])];
+const cook=[T(1048,'App · Delivery','13:05',[I(2,'Erkin S#%tana'),I(1,'Loaded Fries Erkin')],1),
+T(1050,'Wolt · Delivery','8:40',[I(1,'Blue Chester Smash','EXTRA PATTY')]),
+T(1051,'Table 2 · QR','6:12',[I(3,'El Classico'),I(1,'Loaded Halloumi Fries')]),
+T(1052,'Web · Pickup','4:30',[I(2,'El Classico'),I(1,'Ranskalaiset')]),
+T(1046,'Phone · Takeaway','12:44',[I(1,'Kala Classico','ALLERGY: MUSTARD')],1)];
+const ready=[T(1049,'Counter · Eat in · pager 9','READY',[I(3,'Old London Smash')]),
+T(1045,'App · Delivery → Mikko','READY',[I(1,'Chiponacho'),I(1,'Ranskalaiset')]),
+T(1047,'Web · Pickup','READY',[I(2,'Kana Classico')])];
+const style=(arr,kind)=>arr.map(t=>Object.assign(t,{
+bar: kind==='ready'?'#5FD08A':(t.late?'#E5604D':(kind==='new'?'#6FA8DC':'#E8A94D')),
+btn: kind==='new'?'Start':(kind==='cook'?'Bump · ready':'Picked up'),
+bbg: kind==='new'?'#2A3644':(kind==='cook'?'#D4AF37':'#1F3A2A'),
+bfg: kind==='cook'?'#0B0B0B':'#F5F1E6'}));
+const cols=[{t:'New',col:'#8DBCE6',tk:style(newT,'new')},{t:'On the grill',col:'#F0B860',tk:style(cook,'cook')},{t:'Ready / pass',col:'#7FDCA2',tk:style(ready,'ready')}].map(c=>Object.assign(c,{n:c.tk.length}));
+const allday=[[9,'El Classico patties'],[3,'Erkin S#%tana'],[2,'Halloumi'],[2,'Chicken'],[1,'Fish'],[6,'Fries portions']].map(([q,n])=>({q:q,n:n}));
+return { cols: cols, allday: allday };
+}
+}
+</script>
+</body>
+</html>

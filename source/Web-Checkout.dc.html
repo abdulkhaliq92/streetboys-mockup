@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Street Boys — Checkout</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0B0B}
+a{color:#D4AF37}a:hover{color:#F0CF62}
+.sb{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B}
+.cz{font-family:'Cinzel',Georgia,serif}
+.os{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:4px;font:700 14px/1 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1.5px solid #E6C25A;box-sizing:border-box}
+.btn-g{background:#D4AF37;color:#0B0B0B}.btn-g:hover{background:#E6C350;color:#0B0B0B}
+.card{border:1px solid rgba(212,175,55,.5);background:#14110D;border-radius:6px}
+.muted{color:#C9BFA8}
+.seg{flex:1;min-height:56px;border:1.5px solid rgba(212,175,55,.5);background:transparent;color:#F5F1E6;font:700 14px 'Montserrat';letter-spacing:.08em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px}
+.seg.on{background:#D4AF37;color:#0B0B0B;border-color:#D4AF37}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600}
+.fld input{min-height:46px;background:#0B0B0B;border:1px solid rgba(212,175,55,.45);border-radius:4px;color:#F5F1E6;font:500 15px 'Montserrat';padding:0 14px}
+.pay{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 16px;border:1px solid rgba(212,175,55,.4);border-radius:6px;font-weight:600;cursor:pointer}
+.pay.on{border:2px solid #E6C25A;background:rgba(212,175,55,.08)}
+.tip{min-height:44px;flex:1;border:1px solid rgba(212,175,55,.45);border-radius:4px;background:transparent;color:#F5F1E6;font:600 14px 'Montserrat';cursor:pointer}
+.tip.on{background:#D4AF37;color:#0B0B0B}
+.ln{display:flex;justify-content:space-between;gap:12px;padding:10px 0}
+
+.lng{min-height:40px;min-width:44px;background:transparent;color:#C9BFA8;border:none;font:700 12px 'Montserrat',sans-serif;letter-spacing:.1em;cursor:pointer}.lng.on{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%);color:#0B0B0B}
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="sb" style="width:100%;min-height:100vh">
+<header style="border-bottom:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+<a href="Main.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none"><img src="/_blob/a71b4a949fb1790e6e0dbdf484cbdf18" alt="Street Boys — It’s not a cult" style="height:56px;width:auto;display:block"></a>
+<a href="Web-Menu.dc.html" style="font-weight:600;text-decoration:none">{{ t.k171 }}</a>
+<div role="group" aria-label="Language / Kieli" style="display:flex;border:1px solid rgba(212,175,55,.55);border-radius:4px;overflow:hidden"><button type="button" class="{{ fiCls }}" aria-pressed="{{ isFi }}" onClick="{{ setFi }}">FI</button><button type="button" class="{{ enCls }}" aria-pressed="{{ isEn }}" onClick="{{ setEn }}">EN</button></div>
+</div>
+</header>
+<section style="max-width:1280px;margin:0 auto;padding:44px 32px 80px">
+<h1 class="os" style="margin:0 0 28px;font-size:52px">{{ t.k136 }}</h1>
+<div style="display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">
+<div style="flex:999 1 620px;min-width:0;display:flex;flex-direction:column;gap:22px">
+
+<div class="card" style="padding:24px">
+<h2 class="os" style="margin:0 0 16px;font-size:22px;color:#D4AF37">{{ t.k172 }}</h2>
+<div style="display:flex;gap:0">
+<button class="seg" type="button" style="border-radius:6px 0 0 6px">{{ t.k173 }}</button>
+<button class="seg on" type="button" aria-pressed="true">{{ t.k174 }}</button>
+<button class="seg" type="button" style="border-radius:0 6px 6px 0">{{ t.k175 }}</button>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px">
+<label class="fld" style="grid-column:1/-1">{{ t.k176 }}<input value="Salpausselänkatu 12 B 7, 45100 Kouvola"></label>
+<label class="fld">{{ t.k177 }}<input value="B · 2nd floor"></label>
+<label class="fld">{{ t.k157 }}<input value="+358 40 000 0000"></label>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px;padding:14px 16px;border-radius:6px;background:#0B0B0B;border:1px dashed rgba(212,175,55,.5)">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+<span><strong>{{ t.k178 }}</strong> <span class="muted">{{ t.k179 }}</span></span>
+<button type="button" style="margin-left:auto;font:600 14px 'Montserrat';color:#D4AF37;background:none;border:none;text-decoration:underline;cursor:pointer;min-height:44px">{{ t.k180 }}</button>
+</div>
+</div>
+
+<div class="card" style="padding:24px">
+<h2 class="os" style="margin:0 0 16px;font-size:22px;color:#D4AF37">{{ t.k181 }}</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+<div class="pay on"><span style="width:18px;height:18px;border-radius:50%;border:5px solid #E6C25A"></span>{{ t.k182 }}</div>
+<div class="pay"><span style="width:18px;height:18px;border-radius:50%;border:2px solid #8C7A4E"></span>MobilePay</div>
+<div class="pay"><span style="width:18px;height:18px;border-radius:50%;border:2px solid #8C7A4E"></span>Apple Pay / Google Pay</div>
+<div class="pay"><span style="width:18px;height:18px;border-radius:50%;border:2px solid #8C7A4E"></span>{{ t.k183 }}</div>
+</div>
+<p class="muted" style="margin:14px 0 0;font-size:13px">{{ t.k184 }}</p>
+</div>
+
+<div class="card" style="padding:24px">
+<h2 class="os" style="margin:0 0 6px;font-size:22px;color:#D4AF37">{{ t.k185 }}</h2>
+<p class="muted" style="margin:0 0 14px;font-size:14px">{{ t.k186 }}</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="tip" type="button">{{ t.k187 }}</button><button class="tip on" type="button">€2</button><button class="tip" type="button">€3</button><button class="tip" type="button">€5</button><button class="tip" type="button">{{ t.k188 }}</button></div>
+</div>
+</div>
+
+<aside class="card" style="flex:1 1 340px;min-width:0;padding:26px;border-color:#D4AF37" aria-label="Order summary">
+<h2 class="cz" style="margin:0 0 14px;font-size:24px;color:#D4AF37">{{ t.k131 }}</h2>
+<div class="ln" style="border-bottom:1px solid rgba(212,175,55,.2)"><span><strong>1×</strong> El Classico<br><span class="muted" style="font-size:13px">{{ t.k189 }}</span></span><span>€15.00</span></div>
+<div class="ln" style="border-bottom:1px solid rgba(212,175,55,.2)"><span><strong>1×</strong> Erkin S#%tana</span><span>€12.00</span></div>
+<div class="ln" style="border-bottom:1px solid rgba(212,175,55,.2)"><span><strong>1×</strong> Loaded Fries Chipotle</span><span>€8.00</span></div>
+<div class="ln" style="border-bottom:1px solid rgba(212,175,55,.2)"><span><strong>1×</strong> {{ t.k190 }}</span><span>€7.50</span></div>
+<div style="display:flex;gap:10px;margin:16px 0"><label for="promo" style="position:absolute;left:-9999px">{{ t.k191 }}</label><input id="promo" placeholder="{{ t.k191 }}" style="flex:1;min-height:44px;background:#0B0B0B;border:1px solid rgba(212,175,55,.45);border-radius:4px;color:#F5F1E6;font:500 14px 'Montserrat';padding:0 12px"><button class="tip" type="button" style="flex:0 0 90px">{{ t.k192 }}</button></div>
+<div style="display:flex;gap:10px;align-items:center;padding:12px 14px;border:1px solid #E6C25A;border-radius:6px;background:rgba(212,175,55,.08);font-size:14px"><input type="checkbox" checked aria-label="Use Cult points" style="width:20px;height:20px;accent-color:#D4AF37"><span>{{ t.k193 }} <strong>{{ t.k194 }}</strong> → −€5.00</span></div>
+<div class="ln muted" style="margin-top:10px"><span>{{ t.k195 }}</span><span>€42.50</span></div>
+<div class="ln muted"><span>{{ t.k174 }}</span><span>€4.90</span></div>
+<div class="ln muted"><span>{{ t.k196 }}</span><span>€2.00</span></div>
+<div class="ln" style="color:#7FD3A0"><span>{{ t.k197 }}</span><span>−€5.00</span></div>
+<div class="ln" style="border-top:1px solid rgba(212,175,55,.35);margin-top:6px;padding-top:16px;font-size:20px;font-weight:700"><span>{{ t.k134 }}</span><span style="color:#D4AF37">€44.40</span></div>
+<p class="muted" style="margin:0 0 18px;font-size:12px">{{ t.k198 }}</p>
+<a class="btn btn-g" href="Web-Tracking.dc.html" style="width:100%">{{ t.k199 }}</a>
+</aside>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1250}}'>
+class Component extends DCLogic {
+constructor(p) { super(p); this.state = Object.assign({ lang: 'en' }, this.state || {}); }
+componentDidMount() {
+try { const l = window.localStorage.getItem('sb-lang'); if (l && l !== this.state.lang) this.setState({ lang: l }); } catch (e) {}
+try { this._onStore = (e) => { if (e.key === 'sb-lang' && e.newValue) this.setState({ lang: e.newValue }); }; window.addEventListener('storage', this._onStore); } catch (e) {}
+}
+componentWillUnmount() { try { window.removeEventListener('storage', this._onStore); } catch (e) {} }
+setLang(l) { this.setState({ lang: l }); try { window.localStorage.setItem('sb-lang', l); } catch (e) {} }
+dict(fi) { return fi ? {"k172": "Miten haluat sen?", "k174": "Kotiinkuljetus", "k198": "sis. ALV · kerrytät 44 pistettä", "k192": "Käytä", "k184": "Maksut käsittelee maksupalvelu (esim. Stripe tai Paytrail). Korttitietosi eivät koskaan päädy Street Boysin palvelimille.", "k186": "100 % menee keittiölle ja kuljettajalle.", "k187": "Ei", "k181": "Maksutapa", "k176": "Toimitusosoite", "k134": "Yhteensä", "k178": "Heti · perillä n. 18.45", "k173": "Nouto", "k196": "Tippi", "k190": "Halloumitikut + habaneromajoneesi", "k185": "Tippi porukalle", "k188": "Muu", "k131": "Tilauksesi", "k171": "‹ Takaisin ruokalistaan", "k195": "Välisumma", "k136": "Kassalle", "k180": "Ajasta myöhemmäksi", "k177": "Ovikoodi / kerros", "k194": "500 Cult-pistettä", "k182": "Kortti (Visa / Mastercard)", "k189": "Lisäpihvi +3 € · ei sipulia", "k193": "Käytä", "k191": "Kampanjakoodi", "k197": "Cult-pisteet", "k175": "Syö täällä", "k179": "· 2,1 km Kauppahallilta", "k199": "Maksa 44,40 €", "k183": "Lounasetu (Edenred / ePassi)", "k157": "Puhelin"} : {"k172": "How do you want it?", "k174": "Delivery", "k198": "incl. VAT · you’ll earn 44 points", "k192": "Apply", "k184": "Payments handled by the payment provider (e.g. Stripe or Paytrail). Card details never touch Street Boys’ servers.", "k186": "100% goes to the kitchen and driver.", "k187": "None", "k181": "Payment", "k176": "Delivery address", "k134": "Total", "k178": "ASAP · arrives ~18:45", "k173": "Pickup", "k196": "Tip", "k190": "Halloumitikut + habanero mayo", "k185": "Tip the crew", "k188": "Other", "k131": "Your order", "k171": "‹ Back to menu", "k195": "Subtotal", "k136": "Checkout", "k180": "Schedule for later", "k177": "Door code / floor", "k194": "500 Cult points", "k182": "Card (Visa / Mastercard)", "k189": "Extra patty +€3 · no onion", "k193": "Use", "k191": "Promo code", "k197": "Cult points", "k175": "Eat in", "k179": "· 2.1 km from Kauppahalli", "k199": "Pay €44.40", "k183": "Lunch benefit (Edenred / ePassi)", "k157": "Phone"}; }
+renderVals() {
+const fi = (this.state || {}).lang === 'fi';
+return Object.assign({}, this.baseVals(), { t: this.dict(fi), isFi: fi, isEn: !fi, fiCls: fi ? 'lng on' : 'lng', enCls: fi ? 'lng' : 'lng on', setFi: () => this.setLang('fi'), setEn: () => this.setLang('en') });
+}
+
+baseVals() { return {}; }
+}
+</script>
+</body>
+</html>

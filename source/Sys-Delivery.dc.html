@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Street Boys OS — Delivery dispatch</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0E0E}
+a{color:#D4AF37}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0E0E0E;font-size:14px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.p{background:#171513;border:1px solid rgba(212,175,55,.28);border-radius:8px}
+.m{color:#B8AE98}
+.b{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 14px;border-radius:6px;border:1.5px solid #E6C25A;background:transparent;color:#F5F1E6;font:700 12px 'Montserrat';letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.bg{background:#D4AF37;color:#0B0B0B}
+.chip{font:700 11px 'Montserrat';letter-spacing:.06em;padding:4px 8px;border-radius:4px;white-space:nowrap}
+.pin{position:absolute;transform:translate(-50%,-50%);border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 12px 'Montserrat'}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:100%;min-height:100vh;display:flex;flex-direction:column">
+<header style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:12px 22px;border-bottom:1px solid rgba(212,175,55,.3);background:#0A0A0A">
+<a href="Sys-Dashboard.dc.html"><img src="/_blob/a71b4a949fb1790e6e0dbdf484cbdf18" alt="Street Boys — back to dashboard" style="height:40px;width:auto;display:block"></a>
+<span class="os" style="font-size:22px;color:#D4AF37">Delivery dispatch</span>
+<span class="chip" style="background:rgba(95,208,138,.15);color:#7FDCA2">● LIVE · GPS every 5 s</span>
+<div style="margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+<span class="m">Delivery zone: Kouvola centre, 6 km · fee €4.90</span>
+<button class="b" type="button">Zones &amp; fees</button><button class="b bg" type="button">Auto-assign: ON</button>
+</div>
+</header>
+<div style="flex:1;display:flex;flex-wrap:wrap;gap:16px;padding:18px 22px;align-items:stretch">
+<section style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px" aria-label="Delivery orders">
+<h2 class="os" style="margin:0;font-size:20px">Orders · 7 active</h2>
+<sc-for list="{{ orders }}" as="o" hint-placeholder-count="6"><article class="p" style="padding:14px;border-left:4px solid {{ o.col }}">
+<div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><span class="os" style="font-size:20px">#{{ o.id }}</span><span class="chip" style="background:{{ o.cbg }};color:{{ o.col }}">{{ o.st }}</span></div>
+<p style="margin:6px 0 0;font-weight:600">{{ o.addr }}</p>
+<p class="m" style="margin:2px 0 0;font-size:13px">{{ o.meta }}</p>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:8px"><span style="font-size:13px">{{ o.driver }}</span><span class="os" style="color:#D4AF37;font-size:18px">{{ o.eta }}</span></div>
+</article></sc-for>
+</section>
+
+<section class="p" style="flex:999 1 560px;min-width:0;position:relative;overflow:hidden;min-height:620px;background:#121110" role="img" aria-label="Live map of Kouvola with 3 drivers and 5 delivery addresses">
+<svg viewBox="0 0 900 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" fill="none" aria-hidden="true">
+<g stroke="#2A261E" stroke-width="2"><path d="M0 120L900 80M0 260L900 300M0 420L900 380M0 580L900 600M120 0L180 700M300 0L280 700M470 0L500 700M650 0L620 700M800 0L780 700"/></g>
+<path d="M0 340L900 330" stroke="#3E3624" stroke-width="12"/><path d="M420 0L460 700" stroke="#3E3624" stroke-width="9"/>
+<circle cx="440" cy="335" r="300" stroke="rgba(212,175,55,.35)" stroke-width="2" stroke-dasharray="8 8"/>
+<path d="M440 335 L470 250 L600 220 L640 160" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
+<path d="M440 335 L300 420 L240 520" stroke="#6FA8DC" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 10"/>
+<path d="M440 335 L560 430 L700 470" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
+</svg>
+<div class="pin" style="left:48.9%;top:47.9%;width:46px;height:46px;background:#0B0B0B;border:2px solid #E6C25A;color:#D4AF37">SB</div>
+<div class="pin" style="left:62%;top:33%;width:40px;height:40px;background:#D4AF37;color:#0B0B0B;box-shadow:0 0 0 8px rgba(212,175,55,.2)">MK</div>
+<div class="pin" style="left:68%;top:64%;width:40px;height:40px;background:#D4AF37;color:#0B0B0B;box-shadow:0 0 0 8px rgba(212,175,55,.2)">LH</div>
+<div class="pin" style="left:44%;top:56%;width:40px;height:40px;background:#6FA8DC;color:#0B0B0B">VS</div>
+<sc-for list="{{ drops }}" as="d" hint-placeholder-count="5"><div class="pin" style="left:{{ d.x }};top:{{ d.y }};width:28px;height:28px;background:#F5F1E6;color:#0B0B0B;border:2px solid #0B0B0B">{{ d.n }}</div></sc-for>
+<div class="p" style="position:absolute;left:16px;bottom:16px;padding:12px 14px;background:rgba(11,11,11,.9)">
+<p class="m" style="margin:0;font-size:12px">LEGEND</p>
+<p style="margin:6px 0 0;font-size:13px"><span style="color:#D4AF37">●</span> Driver on road &nbsp; <span style="color:#6FA8DC">●</span> Returning &nbsp; <span>○</span> Drop-off</p>
+</div>
+</section>
+
+<section style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:14px" aria-label="Drivers">
+<h2 class="os" style="margin:0;font-size:20px">Drivers · 3 on shift</h2>
+<div class="p" style="padding:14px"><div style="display:flex;gap:12px;align-items:center"><span class="os" style="width:42px;height:42px;border-radius:50%;background:#D4AF37;color:#0B0B0B;display:flex;align-items:center;justify-content:center">MK</span><div style="flex:1"><strong>Mikko</strong><br><span class="m" style="font-size:12px">2 drops · #1047 next · 1.1 km</span></div></div><div style="height:6px;background:#2A2620;border-radius:3px;margin-top:12px"><div style="width:62%;height:6px;background:#D4AF37;border-radius:3px"></div></div><p class="m" style="margin:6px 0 0;font-size:12px">Route 62% · back ~19:05</p></div>
+<div class="p" style="padding:14px"><div style="display:flex;gap:12px;align-items:center"><span class="os" style="width:42px;height:42px;border-radius:50%;background:#D4AF37;color:#0B0B0B;display:flex;align-items:center;justify-content:center">LH</span><div style="flex:1"><strong>Lotta</strong><br><span class="m" style="font-size:12px">1 drop · #1044 · 2.4 km</span></div></div><div style="height:6px;background:#2A2620;border-radius:3px;margin-top:12px"><div style="width:40%;height:6px;background:#D4AF37;border-radius:3px"></div></div><p class="m" style="margin:6px 0 0;font-size:12px">Route 40% · back ~18:58</p></div>
+<div class="p" style="padding:14px"><div style="display:flex;gap:12px;align-items:center"><span class="os" style="width:42px;height:42px;border-radius:50%;background:#6FA8DC;color:#0B0B0B;display:flex;align-items:center;justify-content:center">VS</span><div style="flex:1"><strong>Ville</strong><br><span class="m" style="font-size:12px">Returning · free in 3 min</span></div></div><button class="b bg" type="button" style="width:100%;margin-top:12px">Assign #1045 + #1056</button></div>
+<div class="p" style="padding:14px"><p class="m" style="margin:0;font-size:12px">TODAY</p><p style="margin:6px 0 0">24 deliveries · avg 31 min door-to-door · 96% on time</p></div>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+renderVals() {
+const C={ 'ON ROAD':['#D4AF37','rgba(212,175,55,.15)'], 'READY':['#7FDCA2','rgba(95,208,138,.15)'], 'COOKING':['#F0B860','rgba(232,169,77,.15)'], 'UNASSIGNED':['#F08A79','rgba(229,96,77,.15)'] };
+const O=(id,st,addr,meta,driver,eta)=>({id:id,st:st,addr:addr,meta:meta,driver:driver,eta:eta,col:C[st][0],cbg:C[st][1]});
+const orders=[O(1047,'ON ROAD','Salpausselänkatu 12 B 7','App · €44.40 · paid','Mikko','12 min'),
+O(1043,'ON ROAD','Kauppalankatu 8','Web · €26.00 · paid','Mikko · drop 2','21 min'),
+O(1044,'ON ROAD','Tommolankatu 3 A','App · €31.50 · paid','Lotta','9 min'),
+O(1045,'READY','Valtakatu 22','Web · €17.00 · on shelf 2 min','Unassigned — suggest Ville','~18 min'),
+O(1048,'COOKING','Hallituskatu 5 C 14','App · €33.00 · 13 min in kitchen','—','~25 min'),
+O(1056,'UNASSIGNED','Lehtokatu 10','Wolt · courier by Wolt','Wolt courier 2 min','—')];
+const drops=[['1','71%','23%'],['2','62%','47%'],['3','78%','67%'],['4','27%','74%'],['5','55%','20%']].map(([n,x,y])=>({n:n,x:x,y:y}));
+return { orders: orders, drops: drops };
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street Boys OS — Till</title>
+<link rel="icon" href="../assets/img/logo-gold.svg">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>body{background:#050505}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<helmet>
+<style>
+body{margin:0;background:#0E0E0E}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0E0E0E;font-size:14px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.m{color:#B8AE98}
+.cat{min-height:52px;padding:0 18px;border-radius:8px;border:1.5px solid rgba(212,175,55,.45);background:#171513;color:#F5F1E6;font:700 13px 'Montserrat';letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.cat.on{background:#D4AF37;color:#0B0B0B;border-color:#D4AF37}
+.it{min-height:120px;border-radius:10px;border:1px solid rgba(212,175,55,.35);background:#171513;color:#F5F1E6;text-align:left;padding:14px;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;font-family:'Montserrat'}
+.it:hover{border-color:#D4AF37;background:#1F1B14}
+.q{width:40px;height:40px;border-radius:8px;border:1px solid rgba(212,175,55,.5);background:transparent;color:#F5F1E6;font-size:20px;cursor:pointer}
+.seg{flex:1;min-height:46px;border:1px solid rgba(212,175,55,.45);background:transparent;color:#F5F1E6;font:700 12px 'Montserrat';letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.seg.on{background:#D4AF37;color:#0B0B0B}
+.pay{min-height:64px;border-radius:10px;border:1.5px solid #E6C25A;background:transparent;color:#F5F1E6;font:700 14px 'Montserrat';letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.pay.g{background:#D4AF37;color:#0B0B0B}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:100%;min-height:100vh;display:flex;flex-direction:column">
+<header style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:10px 20px;border-bottom:1px solid rgba(212,175,55,.3);background:#0A0A0A">
+<a href="Sys-Dashboard.html"><img src="../assets/img/logo-gold.svg" alt="Street Boys — back to dashboard" style="height:40px;width:auto;display:block"></a>
+<span class="os" style="font-size:20px;color:#D4AF37">Till 1 · Counter</span>
+<span class="m" style="margin-left:auto">Cashier: <strong style="color:#F5F1E6">Sanni</strong></span>
+<span class="m">Fri 27 Nov · 18:32</span>
+<a href="Sys-FrontDesk.html" style="color:#D4AF37;font-weight:600">Tables</a>
+<a href="Sys-Kitchen.html" style="color:#D4AF37;font-weight:600">Kitchen</a>
+<span style="color:#7FDCA2;font-weight:700;font-size:12px">● Card terminal connected</span>
+</header>
+
+<div style="flex:1;display:flex;flex-wrap:wrap">
+<main style="flex:999 1 560px;min-width:0;padding:18px 20px;box-sizing:border-box">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="5"><button type="button" class="{{ c.cls }}" onClick="{{ c.pick }}">{{ c.n }}</button></sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:16px">
+<sc-for list="{{ shown }}" as="i" hint-placeholder-count="9"><button type="button" class="it" onClick="{{ i.add }}"><span style="font-weight:700;font-size:16px;line-height:1.3">{{ i.n }}</span><span style="display:flex;justify-content:space-between;align-items:flex-end;width:100%"><span class="m" style="font-size:12px">{{ i.tag }}</span><span class="os" style="font-size:22px;color:#D4AF37">{{ i.pl }}</span></span></button></sc-for>
+</div>
+<div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+<span class="m" style="font-size:13px">Modifiers:</span>
+<button class="cat" type="button" style="min-height:44px">Gluten-free bun +1.50</button>
+<button class="cat" type="button" style="min-height:44px">Extra patty +3</button>
+<button class="cat" type="button" style="min-height:44px">Extra topping +1.50</button>
+<button class="cat" type="button" style="min-height:44px">No onion</button>
+<button class="cat" type="button" style="min-height:44px">Allergy note</button>
+</div>
+</main>
+
+<aside style="flex:1 1 360px;max-width:440px;min-width:0;background:#141210;border-left:1px solid rgba(212,175,55,.3);padding:18px 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px" aria-label="Current order">
+<div style="display:flex;justify-content:space-between;align-items:center"><h1 class="os" style="margin:0;font-size:24px">Order #1053</h1><button type="button" class="q" style="width:auto;padding:0 12px;font-size:12px;font-weight:700" onClick="{{ clear }}">CLEAR</button></div>
+<div style="display:flex"><sc-for list="{{ modes }}" as="o" hint-placeholder-count="4"><button type="button" class="{{ o.cls }}" onClick="{{ o.pick }}">{{ o.n }}</button></sc-for></div>
+<div style="flex:1;min-height:200px;display:flex;flex-direction:column">
+<sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}"><p class="m" style="margin:30px 0;text-align:center">Tap items to start an order</p></sc-if>
+<sc-for list="{{ lines }}" as="l" hint-placeholder-count="3"><div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(212,175,55,.15)"><button type="button" class="q" aria-label="Remove one" onClick="{{ l.dec }}">−</button><span class="os" style="font-size:18px;min-width:22px;text-align:center">{{ l.q }}</span><button type="button" class="q" aria-label="Add one" onClick="{{ l.inc }}">+</button><span style="flex:1;font-weight:600">{{ l.n }}</span><span style="font-weight:700">{{ l.t }}</span></div></sc-for>
+</div>
+<div style="border-top:1px solid rgba(212,175,55,.35);padding-top:12px;display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;justify-content:space-between" class="m"><span>VAT 13.5% included</span><span>{{ vat }}</span></div>
+<div style="display:flex;justify-content:space-between" class="m"><span>Cult member</span><span style="color:#D4AF37">Scan card / phone</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="os" style="font-size:22px">Total</span><span class="os" style="font-size:40px;color:#D4AF37">{{ total }}</span></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+<button type="button" class="pay g" onClick="{{ pay }}">Card</button>
+<button type="button" class="pay" onClick="{{ pay }}">Cash</button>
+<button type="button" class="pay" onClick="{{ pay }}">MobilePay</button>
+<button type="button" class="pay">Split bill</button>
+</div>
+<sc-if value="{{ paid }}" hint-placeholder-val="{{ false }}"><div style="border:2px solid #5FD08A;border-radius:10px;padding:14px;background:rgba(95,208,138,.08)"><p style="margin:0;font-weight:700;color:#7FDCA2">Paid · sent to kitchen</p><p class="m" style="margin:4px 0 0;font-size:13px">Receipt printed · ticket on KDS · pager #12</p></div></sc-if>
+</aside>
+</div>
+</div>
+</script>
+<script type="text/x-dc-logic" id="dc-logic" data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+constructor(p){ super(p); this.state = { cat: 'Smash', mode: 'Eat in', cart: { ec: 2, lc: 1 }, paid: false }; }
+renderVals() {
+const items = [
+['ec','El Classico',12,'Smash','L'],['cn','Chiponacho',12,'Smash','L'],['es','Erkin S#%tana',12,'Smash','L · hot'],['ps','Pizza Smash',12,'Smash','L'],['bc','Blue Chester Smash',12,'Smash','L'],['ol','Old London Smash',12,'Smash','L'],
+['kc','Kana Classico',12,'Chicken & halloumi','L'],['ck','Chipokana',12,'Chicken & halloumi','L'],['hc','Halloumi Classico',12,'Chicken & halloumi',''],['ch','Chipohalloumi',12,'Chicken & halloumi',''],
+['kl','Kala Classico',13,'Fish','L'],['cl','Chipokala',13,'Fish','L'],['kb','Kala Blue Chester',13,'Fish','L'],
+['lc','Loaded Fries Chipotle',8,'Sides','L'],['le','Loaded Fries Erkin',8,'Sides','L'],['lo','Loaded Fries Old London',8,'Sides','L'],['lp','Loaded Fries Parmesan',8,'Sides','L'],['lh','Loaded Halloumi Fries',8,'Sides',''],['rf','Ranskalaiset',5,'Sides','L'],['ht','Halloumitikut',6,'Sides',''],
+['d1','House mayo',1.5,'Dips','L'],['d2','Habanero mayo',1.5,'Dips','L'],['d3','Chipotle mayo',1.5,'Dips','L'],['d4','Cheddar sauce',1.5,'Dips','L'],['d5','Oregano aioli',1.5,'Dips','L']
+];
+const eur = (v) => '€' + v.toFixed(2);
+const st = this.state;
+const setQ = (id, d) => { const c = Object.assign({}, this.state.cart); c[id] = (c[id] || 0) + d; if (c[id] <= 0) delete c[id]; this.setState({ cart: c, paid: false }); };
+const cats = ['Smash','Chicken & halloumi','Fish','Sides','Dips'].map(n => ({ n: n, cls: n === st.cat ? 'cat on' : 'cat', pick: () => this.setState({ cat: n }) }));
+const shown = items.filter(i => i[3] === st.cat).map(i => ({ n: i[1], pl: i[2] % 1 ? eur(i[2]) : '€' + i[2], tag: i[4], add: () => setQ(i[0], 1) }));
+let total = 0;
+const lines = items.filter(i => st.cart[i[0]]).map(i => { const q = st.cart[i[0]]; total += q * i[2]; return { n: i[1], q: q, t: eur(q * i[2]), inc: () => setQ(i[0], 1), dec: () => setQ(i[0], -1) }; });
+const modes = ['Eat in','Takeaway','Table','Phone'].map((n, k, a) => ({ n: n, cls: (n === st.mode ? 'seg on' : 'seg'), pick: () => this.setState({ mode: n }) }));
+return { cats: cats, shown: shown, lines: lines, modes: modes, empty: lines.length === 0, total: eur(total), vat: eur(total - total / 1.135), paid: st.paid,
+pay: () => this.setState({ paid: lines.length > 0 }), clear: () => this.setState({ cart: {}, paid: false }) };
+}
+}
+</script>
+<script src="../assets/dc-runtime.js"></script>
+</body>
+</html>

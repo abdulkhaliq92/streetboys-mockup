@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street Boys — Brand &amp; UI kit</title>
+<link rel="icon" href="../assets/img/logo-gold.svg">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>body{background:#050505}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<helmet>
+<style>
+body{margin:0;background:#0B0B0B}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B;font-size:15px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase}
+.m{color:#B8AE98}
+.p{border:1px solid rgba(212,175,55,.4);border-radius:8px;background:#14110D;padding:24px}
+.sw{height:90px;border-radius:6px;border:1px solid rgba(245,241,230,.2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:4px;font:700 13px 'Montserrat';letter-spacing:.08em;text-transform:uppercase;border:1.5px solid #E6C25A;cursor:pointer}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:100%;min-height:100vh">
+<div style="max-width:1320px;margin:0 auto;padding:40px 32px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between">
+<img src="../assets/img/logo-gold.svg" alt="Street Boys — It’s not a cult" style="height:120px;width:auto">
+<p class="m" style="margin:0;max-width:560px;line-height:1.7">Metallic gold is used for headings, prices, buttons and the logo; flat #D4AF37 only for thin lines and small status chips. One look across the website, Cult App, tills, kitchen screens and driver app: black and gold, art-deco framing, bold condensed headings. Logo and photos are taken from the current streetboys.net.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<section class="p" aria-label="Colour palette">
+<h2 class="os" style="margin:0 0 16px;font-size:22px;color:#D4AF37">Colour</h2>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;font-size:12px">
+<div><div class="sw" style="background:#0B0B0B"></div><p style="margin:6px 0 0"><strong>Black</strong><br>#0B0B0B</p></div>
+<div><div class="sw" style="background:#D4AF37"></div><p style="margin:6px 0 0"><strong>Metallic gold</strong><br>#FFF4B8 → #DDB343 → #B07F22</p></div>
+<div><div class="sw" style="background:#A67C2E"></div><p style="margin:6px 0 0"><strong>Dark gold</strong><br>#A67C2E</p></div>
+<div><div class="sw" style="background:#2A2A2A"></div><p style="margin:6px 0 0"><strong>Gray</strong><br>#2A2A2A</p></div>
+<div><div class="sw" style="background:#F5F1E6"></div><p style="margin:6px 0 0"><strong>Cream</strong><br>#F5F1E6</p></div>
+<div><div class="sw" style="background:#14110D"></div><p style="margin:6px 0 0"><strong>Panel</strong><br>#14110D</p></div>
+</div>
+<p class="m" style="margin:16px 0 0;font-size:13px">System status: <span style="color:#7FDCA2">● ready</span> <span style="color:#F0B860">● cooking</span> <span style="color:#8DBCE6">● new</span> <span style="color:#F08A79">● late / sold out</span></p>
+</section>
+<section class="p" aria-label="Typography">
+<h2 class="os" style="margin:0 0 16px;font-size:22px;color:#D4AF37">Type</h2>
+<p style="margin:0;font-family:'Cinzel',serif;font-size:34px;font-weight:800;color:#D4AF37">The Smash List</p><p class="m" style="margin:0 0 14px;font-size:12px">Cinzel · section titles</p>
+<p class="os" style="margin:0;font-size:38px;line-height:1">Not just a burger.</p><p class="m" style="margin:2px 0 14px;font-size:12px">Oswald · headlines, prices, numbers</p>
+<p style="margin:0;font-family:'Playfair Display',serif;font-style:italic;font-size:28px;color:#D4AF37">It’s street culture.</p><p class="m" style="margin:0 0 14px;font-size:12px">Playfair Display Italic · accents</p>
+<p style="margin:0">Montserrat for body text, forms and UI.</p>
+</section>
+<section class="p" aria-label="Components">
+<h2 class="os" style="margin:0 0 16px;font-size:22px;color:#D4AF37">Components</h2>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<button class="btn" type="button" style="background:#D4AF37;color:#0B0B0B">Order now</button>
+<button class="btn" type="button" style="background:transparent;color:#F5F1E6">Book a table</button>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+<span style="font:700 11px 'Montserrat';padding:5px 9px;border-radius:4px;background:rgba(95,208,138,.15);color:#7FDCA2">READY</span>
+<span style="font:700 11px 'Montserrat';padding:5px 9px;border-radius:4px;background:rgba(232,169,77,.15);color:#F0B860">COOKING</span>
+<span style="font:700 11px 'Montserrat';padding:5px 9px;border-radius:4px;background:rgba(111,168,220,.15);color:#8DBCE6">NEW</span>
+<span style="font:700 11px 'Montserrat';padding:5px 9px;border-radius:4px;background:rgba(212,175,55,.15);color:#D4AF37">ON ROAD</span>
+</div>
+<div style="margin-top:16px;border:1px solid rgba(212,175,55,.5);border-radius:6px;padding:14px;display:flex;justify-content:space-between;align-items:center"><span class="os" style="font-size:20px">El Classico</span><span class="os" style="font-size:20px;color:#D4AF37">€12</span></div>
+<p class="m" style="margin:14px 0 0;font-size:13px">Touch targets ≥ 44 px (52–64 px on tills and kitchen screens, used with greasy hands).</p>
+</section>
+</div>
+<section class="p" aria-label="Photography">
+<h2 class="os" style="margin:0 0 16px;font-size:22px;color:#D4AF37">Photography · from streetboys.net</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+<img src="../assets/img/burger-cheese.jpg" alt="Cheese smashburger" style="width:100%;height:150px;object-fit:cover;border-radius:6px">
+<img src="../assets/img/burger-apple.jpg" alt="Burger with apple salsa" style="width:100%;height:150px;object-fit:cover;border-radius:6px">
+<img src="../assets/img/crew-burger.jpg" alt="The crew with a burger" style="width:100%;height:150px;object-fit:cover;border-radius:6px">
+<img src="../assets/img/smash-seasoning.jpg" alt="Seasoning patties" style="width:100%;height:150px;object-fit:cover;border-radius:6px">
+<img src="../assets/img/tower-burger.jpg" alt="Tower burger" style="width:100%;height:150px;object-fit:cover;border-radius:6px">
+<img src="../assets/img/grill-patties.jpg" alt="Patties on the grill" style="width:100%;height:150px;object-fit:cover;border-radius:6px">
+<img src="../assets/img/private-room.jpg" alt="Private room" style="width:100%;height:150px;object-fit:cover;border-radius:6px">
+</div>
+<p class="m" style="margin:14px 0 0;font-size:13px">Use the original full-resolution files for the build; these are screen captures. A food-truck photo is still needed.</p>
+</section>
+</div>
+</div>
+</script>
+<script type="text/x-dc-logic" id="dc-logic" data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+<script src="../assets/dc-runtime.js"></script>
+</body>
+</html>

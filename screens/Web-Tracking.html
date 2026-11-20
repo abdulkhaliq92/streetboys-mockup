@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street Boys — Track your order</title>
+<link rel="icon" href="../assets/img/logo-gold.svg">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>body{background:#050505}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<helmet>
+<style>
+body{margin:0;background:#0B0B0B}
+a{color:#D4AF37}a:hover{color:#F0CF62}
+.sb{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B}
+.cz{font-family:'Cinzel',Georgia,serif}
+.os{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 20px;border-radius:4px;font:700 13px/1 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1.5px solid #E6C25A;box-sizing:border-box;background:transparent;color:#F5F1E6}
+.card{border:1px solid rgba(212,175,55,.5);background:#14110D;border-radius:6px}
+.muted{color:#C9BFA8}
+.st{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;text-align:center;font-size:13px;font-weight:600}
+.dot{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #4A4232;color:#6E6656}
+.dot.done{background:#D4AF37;border-color:#D4AF37;color:#0B0B0B}
+.dot.now{border-color:#D4AF37;color:#D4AF37;box-shadow:0 0 0 6px rgba(212,175,55,.18)}
+
+.lng{min-height:40px;min-width:44px;background:transparent;color:#C9BFA8;border:none;font:700 12px 'Montserrat',sans-serif;letter-spacing:.1em;cursor:pointer}.lng.on{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%);color:#0B0B0B}
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="sb" style="width:100%;min-height:100vh">
+<header style="border-bottom:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+<a href="home.html" style="display:flex;align-items:center;gap:12px;text-decoration:none"><img src="../assets/img/logo-gold.svg" alt="Street Boys — It’s not a cult" style="height:56px;width:auto;display:block"></a>
+<span style="display:flex;align-items:center;gap:8px;font:700 12px 'Montserrat';letter-spacing:.12em;color:#7FD3A0"><span style="width:9px;height:9px;border-radius:50%;background:#5FD08A"></span>{{ t.k200 }}</span>
+<div role="group" aria-label="Language / Kieli" style="display:flex;border:1px solid rgba(212,175,55,.55);border-radius:4px;overflow:hidden"><button type="button" class="{{ fiCls }}" aria-pressed="{{ isFi }}" onClick="{{ setFi }}">FI</button><button type="button" class="{{ enCls }}" aria-pressed="{{ isEn }}" onClick="{{ setEn }}">EN</button></div>
+</div>
+</header>
+<section style="max-width:1280px;margin:0 auto;padding:40px 32px 72px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px">
+<div>
+<p class="muted" style="margin:0;font-size:14px;letter-spacing:.08em">{{ t.k201 }}</p>
+<h1 class="os" style="margin:8px 0 0;font-size:54px;line-height:1">{{ t.k202 }}</h1>
+</div>
+<div style="text-align:right">
+<p class="muted" style="margin:0;font-size:13px;letter-spacing:.12em">{{ t.k203 }}</p>
+<p class="os" style="margin:0;font-size:72px;line-height:1;color:#D4AF37">{{ t.k204 }}</p>
+<p class="muted" style="margin:4px 0 0;font-size:14px">{{ t.k205 }}</p>
+</div>
+</div>
+
+<div class="card" style="padding:26px 24px;margin-top:28px">
+<div style="display:flex;gap:8px;position:relative">
+<div style="position:absolute;left:10%;right:10%;top:20px;height:2px;background:#4A4232"></div>
+<div style="position:absolute;left:10%;width:60%;top:20px;height:2px;background:#D4AF37"></div>
+<div class="st" style="position:relative"><span class="dot done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></span>{{ t.k206 }}<span class="muted" style="font-weight:500">18:14</span></div>
+<div class="st" style="position:relative"><span class="dot done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></span>{{ t.k35 }}<span class="muted" style="font-weight:500">18:16</span></div>
+<div class="st" style="position:relative"><span class="dot done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></span>{{ t.k207 }}<span class="muted" style="font-weight:500">18:29</span></div>
+<div class="st" style="position:relative;color:#D4AF37"><span class="dot now"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/></svg></span>{{ t.k208 }}<span style="font-weight:500">18:33</span></div>
+<div class="st" style="position:relative;color:#8C836F"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 11l8-7 8 7v9H4z"/></svg></span>{{ t.k209 }}<span style="font-weight:500">—</span></div>
+</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:24px">
+<div style="flex:999 1 620px;min-width:0;height:460px;border:1px solid rgba(212,175,55,.45);border-radius:6px;background:#121110;position:relative;overflow:hidden" role="img" aria-label="Map with the driver about 1 km away on Salpausselänkatu">
+<svg viewBox="0 0 800 460" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" fill="none" aria-hidden="true"><g stroke="#2E2a22" stroke-width="2"><path d="M0 90L800 40M0 230L800 260M0 380L800 330M120 0L180 460M330 0L300 460M520 0L560 460M700 0L660 460"/></g><path d="M0 150L800 120" stroke="#3E3624" stroke-width="10"/><path d="M150 380 L170 230 L300 230 L320 120 L560 140 L640 300" stroke="#D4AF37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 12"/><path d="M150 380 L170 230 L300 230 L320 120" stroke="#D4AF37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div style="position:absolute;left:calc(19% - 18px);top:calc(82% - 18px);width:36px;height:36px;border-radius:50%;background:#0B0B0B;border:2px solid #E6C25A;display:flex;align-items:center;justify-content:center"><span class="cz" style="font-size:11px;font-weight:800;color:#D4AF37">SB</span></div>
+<div style="position:absolute;left:calc(40% - 22px);top:calc(26% - 22px);width:44px;height:44px;border-radius:50%;background:#D4AF37;box-shadow:0 0 0 10px rgba(212,175,55,.22);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="2" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/></svg></div>
+<div style="position:absolute;left:calc(80% - 18px);top:calc(65% - 40px)"><svg width="40" height="40" viewBox="0 0 24 24" fill="#F5F1E6" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg></div>
+<span style="position:absolute;left:14px;bottom:12px;font:600 11px 'Montserrat';letter-spacing:.1em;color:#C9BFA8">{{ t.k210 }}</span>
+</div>
+
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<div class="card" style="padding:22px">
+<p class="muted" style="margin:0 0 12px;font-size:12px;letter-spacing:.12em">{{ t.k211 }}</p>
+<div style="display:flex;gap:14px;align-items:center">
+<span class="os" style="width:56px;height:56px;border-radius:50%;background:#2A2A2A;border:1.5px solid #E6C25A;display:flex;align-items:center;justify-content:center;font-size:22px;color:#D4AF37">M</span>
+<div><p style="margin:0;font-weight:700;font-size:18px">Mikko</p><p class="muted" style="margin:2px 0 0;font-size:14px">{{ t.k212 }}</p></div>
+</div>
+<div style="display:flex;gap:10px;margin-top:16px"><a class="btn" href="tel:+358401234567" style="flex:1">{{ t.k213 }}</a><a class="btn" href="sms:+358401234567" style="flex:1">{{ t.k214 }}</a></div>
+</div>
+<div class="card" style="padding:22px">
+<p class="muted" style="margin:0 0 12px;font-size:12px;letter-spacing:.12em">{{ t.k215 }}</p>
+<p style="margin:0;font-weight:600">Salpausselänkatu 12 B 7, Kouvola</p>
+<p class="muted" style="margin:6px 0 0;font-size:14px">{{ t.k216 }}</p>
+<div style="height:1px;background:rgba(212,175,55,.3);margin:16px 0"></div>
+<p style="margin:0;font-size:14px;line-height:1.8">1× El Classico · 1× Erkin S#%tana<br>1× Loaded Fries Chipotle · 1× Halloumitikut</p>
+<p style="margin:12px 0 0;font-weight:700;display:flex;justify-content:space-between"><span>{{ t.k217 }}</span><span style="color:#D4AF37">€44.40</span></p>
+</div>
+<a href="mailto:streetboyskouvola@gmail.com?subject=Order%20%231047" style="font-weight:600;font-size:14px">{{ t.k218 }}</a>
+</div>
+</div>
+</section>
+</div>
+</script>
+<script type="text/x-dc-logic" id="dc-logic" data-props='{"$preview":{"width":1440,"height":1150}}'>
+class Component extends DCLogic {
+constructor(p) { super(p); this.state = Object.assign({ lang: 'en' }, this.state || {}); }
+componentDidMount() {
+try { const l = window.localStorage.getItem('sb-lang'); if (l && l !== this.state.lang) this.setState({ lang: l }); } catch (e) {}
+try { this._onStore = (e) => { if (e.key === 'sb-lang' && e.newValue) this.setState({ lang: e.newValue }); }; window.addEventListener('storage', this._onStore); } catch (e) {}
+}
+componentWillUnmount() { try { window.removeEventListener('storage', this._onStore); } catch (e) {} }
+setLang(l) { this.setState({ lang: l }); try { window.localStorage.setItem('sb-lang', l); } catch (e) {} }
+dict(fi) { return fi ? {"k217": "Maksettu", "k201": "TILAUS #SB-1047 · KOTIINKULJETUS", "k214": "Viesti", "k218": "Jokin pielessä? Ota yhteyttä Street Boysiin", "k200": "LIVE", "k210": "LIVE-KARTTA · PÄIVITTYY 5 S VÄLEIN", "k205": "Arvio 18.45", "k213": "Soita", "k35": "Grillillä", "k208": "Kuljetuksessa", "k211": "KULJETTAJASI", "k202": "Matkalla sinulle", "k207": "Pakattu ja valmis", "k212": "Musta Toyota Yaris · 1,1 km päässä", "k206": "Tilaus vastaanotettu", "k216": "B · 2. kerros", "k215": "TOIMITUSOSOITE", "k204": "12 min", "k203": "PERILLÄ", "k209": "Toimitettu"} : {"k217": "Paid", "k201": "ORDER #SB-1047 · DELIVERY", "k214": "Message", "k218": "Something wrong? Contact Street Boys", "k200": "LIVE", "k210": "LIVE MAP · UPDATES EVERY 5 S", "k205": "Estimated 18:45", "k213": "Call", "k35": "On the grill", "k208": "Out for delivery", "k211": "YOUR DRIVER", "k202": "On the way to you", "k207": "Packed & ready", "k212": "Black Toyota Yaris · 1.1 km away", "k206": "Order received", "k216": "B · 2nd floor", "k215": "DELIVERING TO", "k204": "12 min", "k203": "ARRIVING IN", "k209": "Delivered"}; }
+renderVals() {
+const fi = (this.state || {}).lang === 'fi';
+return Object.assign({}, this.baseVals(), { t: this.dict(fi), isFi: fi, isEn: !fi, fiCls: fi ? 'lng on' : 'lng', enCls: fi ? 'lng' : 'lng on', setFi: () => this.setLang('fi'), setEn: () => this.setLang('en') });
+}
+
+baseVals() { return {}; }
+}
+</script>
+<script src="../assets/dc-runtime.js"></script>
+</body>
+</html>

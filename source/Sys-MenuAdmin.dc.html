@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Street Boys OS — Menu &amp; stock</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0E0E}
+a{color:#D4AF37}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0E0E0E;font-size:14px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.p{background:#171513;border:1px solid rgba(212,175,55,.28);border-radius:8px}
+.m{color:#B8AE98}
+.b{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:6px;border:1.5px solid #E6C25A;background:transparent;color:#F5F1E6;font:700 12px 'Montserrat';letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.bg{background:#D4AF37;color:#0B0B0B}
+.chip{font:700 11px 'Montserrat';letter-spacing:.06em;padding:4px 8px;border-radius:4px;white-space:nowrap}
+th{text-align:left;font:700 11px 'Montserrat';letter-spacing:.1em;color:#B8AE98;padding:10px 12px;border-bottom:1px solid rgba(212,175,55,.3);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid rgba(212,175,55,.12);white-space:nowrap}
+.tog{width:46px;height:26px;border-radius:13px;border:none;position:relative;cursor:pointer;vertical-align:middle}
+.nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 14px;border-radius:6px;color:#D9D2C1;text-decoration:none;font-weight:600}
+.nav a.on{background:#D4AF37;color:#0B0B0B}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:100%;min-height:100vh">
+<header style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:12px 22px;border-bottom:1px solid rgba(212,175,55,.3);background:#0A0A0A">
+<a href="Sys-Dashboard.dc.html"><img src="/_blob/a71b4a949fb1790e6e0dbdf484cbdf18" alt="Street Boys — back to dashboard" style="height:40px;width:auto;display:block"></a>
+<span class="os" style="font-size:22px;color:#D4AF37">Menu &amp; stock</span>
+<nav class="nav" aria-label="Menu sections" style="display:flex;gap:6px;flex-wrap:wrap"><a class="on" href="#items">Items</a><a href="#edit">Modifiers &amp; recipe</a><a href="#stock">Ingredients &amp; stock</a></nav>
+<div style="margin-left:auto;display:flex;gap:10px"><button class="b" type="button">Import CSV</button><button class="b bg" type="button">+ New item</button></div>
+</header>
+<div style="display:flex;flex-wrap:wrap;gap:16px;padding:18px 22px;align-items:flex-start">
+<section id="items" class="p" style="flex:999 1 640px;min-width:0;padding:16px" aria-label="Menu items">
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+<label style="display:flex;align-items:center;gap:8px"><span class="m" style="font-size:13px">Search</span><input value="" placeholder="Item name…" style="min-height:42px;background:#0E0E0E;border:1px solid rgba(212,175,55,.4);border-radius:6px;color:#F5F1E6;padding:0 12px;font:500 14px 'Montserrat';width:220px"></label>
+<span class="m" style="font-size:13px">Changes sync to website, app, tills and kitchen instantly · Wolt/Foodora via integration</span>
+</div>
+<div style="overflow-x:auto;margin-top:12px">
+<table style="border-collapse:collapse;width:100%;font-size:14px">
+<thead><tr><th scope="col">Item</th><th scope="col">Category</th><th scope="col">Price</th><th scope="col">Allergens</th><th scope="col">Food cost</th><th scope="col">Sold 7 d</th><th scope="col">Web/app</th><th scope="col">Wolt</th><th scope="col">Available</th></tr></thead>
+<tbody>
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="12"><tr>
+<td><strong>{{ r.n }}</strong></td><td class="m">{{ r.c }}</td><td class="os" style="font-size:17px;color:#D4AF37">{{ r.p }}</td><td>{{ r.a }}</td><td>{{ r.fc }}</td><td>{{ r.sold }}</td>
+<td><button type="button" class="tog" aria-label="Web and app" aria-pressed="true" style="background:#D4AF37"><span style="position:absolute;right:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#0B0B0B"></span></button></td>
+<td><button type="button" class="tog" aria-label="Wolt" style="background:{{ r.wbg }}"><span style="position:absolute;{{ r.wpos }}top:3px;width:20px;height:20px;border-radius:50%;background:#0B0B0B"></span></button></td>
+<td><span class="chip" style="background:{{ r.sbg }};color:{{ r.sfg }}">{{ r.st }}</span></td>
+</tr></sc-for>
+</tbody>
+</table>
+</div>
+</section>
+
+<aside style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<section id="stock" class="p" style="padding:16px" aria-label="Stock levels">
+<h2 class="os" style="margin:0 0 10px;font-size:20px">Stock · live from sales</h2>
+<sc-for list="{{ stock }}" as="k" hint-placeholder-count="7"><div style="padding:8px 0"><div style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:600">{{ k.n }}</span><span style="color:{{ k.col }};font-weight:700">{{ k.q }}</span></div><div style="height:6px;background:#2A2620;border-radius:3px;margin-top:6px"><div style="height:6px;border-radius:3px;width:{{ k.w }};background:{{ k.col }}"></div></div></div></sc-for>
+<button class="b bg" type="button" style="width:100%;margin-top:10px">Create purchase order</button>
+</section>
+<section id="edit" class="p" style="padding:16px" aria-label="Edit item">
+<h2 class="os" style="margin:0 0 10px;font-size:20px">Edit · Erkin S#%tana</h2>
+<div style="display:flex;flex-direction:column;gap:10px">
+<label style="display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600">Name (FI / EN)<input value="Erkin S#%tana" style="min-height:42px;background:#0E0E0E;border:1px solid rgba(212,175,55,.4);border-radius:6px;color:#F5F1E6;padding:0 12px;font:500 14px 'Montserrat'"></label>
+<label style="display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600">Price €<input value="12.00" style="min-height:42px;background:#0E0E0E;border:1px solid rgba(212,175,55,.4);border-radius:6px;color:#F5F1E6;padding:0 12px;font:500 14px 'Montserrat'"></label>
+<p class="m" style="margin:0;font-size:13px">Recipe: smash patty 2×, brioche, habanero mayo 30 g, spicy cheese sauce 40 g, strawberry-habanero BBQ 20 g, pickle de gallo 25 g</p>
+<p class="m" style="margin:0;font-size:13px">Kitchen route: Grill · Prep time 6 min</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip" style="background:#221E18;color:#D9D2C1">L</span><span class="chip" style="background:#221E18;color:#D9D2C1">Contains: gluten, egg, mustard</span></div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+renderVals() {
+const R=(n,c,p,a,fc,sold,wolt,st)=>{ const S={ 'ON':['rgba(95,208,138,.15)','#7FDCA2'], 'LOW':['rgba(232,169,77,.15)','#F0B860'], 'SOLD OUT':['rgba(229,96,77,.15)','#F08A79'] }[st];
+return {n:n,c:c,p:p,a:a,fc:fc,sold:sold,st:st,sbg:S[0],sfg:S[1],wbg:wolt?'#D4AF37':'#3A352B',wpos:wolt?'right:3px;':'left:3px;'}; };
+const rows=[R('El Classico','Smash','€12.00','L','29%',214,1,'ON'),R('Chiponacho','Smash','€12.00','L','31%',96,1,'ON'),R('Erkin S#%tana','Smash','€12.00','L','30%',158,1,'ON'),
+R('Pizza Smash','Smash','€12.00','L','28%',71,1,'ON'),R('Blue Chester Smash','Smash','€12.00','L','33%',64,1,'ON'),R('Old London Smash','Smash','€12.00','L','32%',112,1,'ON'),
+R('Kana Classico','Chicken','€12.00','L','27%',58,1,'ON'),R('Chipohalloumi','Halloumi','€12.00','—','36%',49,0,'LOW'),R('Kala Classico','Fish','€13.00','L','34%',22,0,'ON'),
+R('Loaded Fries Chipotle','Sides','€8.00','L','22%',131,1,'ON'),R('Loaded Halloumi Fries','Sides','€8.00','—','35%',40,0,'SOLD OUT'),R('Ranskalaiset','Sides','€5.00','L','14%',260,1,'ON')];
+const K=(n,q,pct)=>({n:n,q:q,w:pct+'%',col:pct<25?'#E5604D':(pct<45?'#E8A94D':'#5FD08A')});
+const stock=[K('Beef patties (domestic)','186 pcs',72),K('Potato brioche buns','38 pcs',18),K('Halloumi','1.2 kg',12),K('Chicken fillets','54 pcs',55),K('Fries (frozen)','22 kg',64),K('Cheddar sauce','3.5 l',40),K('Fish patties','16 pcs',35)];
+return { rows: rows, stock: stock };
+}
+}
+</script>
+</body>
+</html>

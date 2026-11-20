@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Owner App — Today</title>
+<link rel="icon" href="../assets/img/logo-gold.svg">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>html,body{background:#050505}body{display:flex;justify-content:center;align-items:flex-start;padding:32px 0;min-height:100vh;box-sizing:border-box}#dc-root{box-shadow:0 0 0 2px #3A3020,0 30px 80px rgba(0,0,0,.6);border-radius:28px;overflow:hidden}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<helmet>
+<style>
+body{margin:0;background:#0B0B0B}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B;font-size:14px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.m{color:#B8AE98}
+.c{border:1px solid rgba(212,175,55,.35);border-radius:12px;background:#14110D;padding:14px}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font:600 11px 'Montserrat';color:#B8AE98;text-decoration:none;min-height:56px;justify-content:center}
+.tab.on{color:#D4AF37}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:390px;height:844px;display:flex;flex-direction:column;overflow:hidden">
+<div style="flex:1;overflow:hidden;padding:18px 16px 0;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div><p class="m" style="margin:0;font-size:12px">Street Boys · Owner</p><p class="os" style="margin:2px 0 0;font-size:24px">Today</p></div>
+<button type="button" style="min-height:44px;padding:0 14px;border-radius:22px;border:1.5px solid #E6C25A;background:transparent;color:#F5F1E6;font:700 11px 'Montserrat';letter-spacing:.06em">PAUSE ONLINE</button>
+</div>
+<div class="c" style="border-color:#D4AF37">
+<p class="m" style="margin:0;font-size:11px;letter-spacing:.12em">NET SALES · LIVE</p>
+<p class="os" style="margin:4px 0 0;font-size:44px;color:#D4AF37;line-height:1">€1,846</p>
+<p style="margin:4px 0 0;color:#5FD08A;font-size:13px;font-weight:600">▲ 12% vs last Friday</p>
+<div style="display:flex;gap:6px;align-items:flex-end;height:60px;margin-top:12px"><sc-for list="{{ bars }}" as="b" hint-placeholder-count="8"><span style="flex:1;background:#D4AF37;border-radius:2px 2px 0 0;height:{{ b }}"></span></sc-for></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+<div class="c"><p class="m" style="margin:0;font-size:11px">ORDERS</p><p class="os" style="margin:2px 0 0;font-size:26px">132</p></div>
+<div class="c"><p class="m" style="margin:0;font-size:11px">KITCHEN AVG</p><p class="os" style="margin:2px 0 0;font-size:26px">9:40</p></div>
+<div class="c"><p class="m" style="margin:0;font-size:11px">COVERS TONIGHT</p><p class="os" style="margin:2px 0 0;font-size:26px">52</p></div>
+<div class="c"><p class="m" style="margin:0;font-size:11px">LABOUR %</p><p class="os" style="margin:2px 0 0;font-size:26px">16.9%</p></div>
+</div>
+<div class="c">
+<p class="os" style="margin:0 0 6px;font-size:16px">Alerts</p>
+<p style="margin:8px 0 0;font-size:13px"><span style="color:#F08A79;font-weight:700">LOW</span> · Potato brioche buns, 38 left</p>
+<p style="margin:8px 0 0;font-size:13px"><span style="color:#F0B860;font-weight:700">SLOW</span> · 4 tickets over 12 min</p>
+<p style="margin:8px 0 0;font-size:13px"><span style="color:#D4AF37;font-weight:700">NEW</span> · Catering request, 150 guests</p>
+</div>
+<div class="c" style="display:flex;gap:12px;align-items:center"><span style="flex:1"><strong>Push to Cult members</strong><br><span class="m" style="font-size:12px">2,418 members · last open rate 18%</span></span><span style="color:#D4AF37;font-size:22px;font-weight:800">›</span></div>
+</div>
+<nav aria-label="Owner app" style="display:flex;border-top:1px solid rgba(212,175,55,.3);background:#0E0E0E;padding:4px 6px 10px">
+<a class="tab on" href="App-OwnerMobile.html">Today</a><a class="tab" href="Sys-Kitchen.html">Orders</a><a class="tab" href="Sys-FrontDesk.html">Bookings</a><a class="tab" href="Sys-MenuAdmin.html">Menu</a><a class="tab" href="Sys-Dashboard.html">Reports</a>
+</nav>
+</div>
+</script>
+<script type="text/x-dc-logic" id="dc-logic" data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return { bars: [8,22,46,58,92,100,74,40].map(v => v + '%') }; }
+}
+</script>
+<script src="../assets/dc-runtime.js"></script>
+</body>
+</html>

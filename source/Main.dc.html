@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Street Boys — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0B0B}
+a{color:#D4AF37}a:hover{color:#F0CF62}
+.sb{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B}
+.cz{font-family:'Cinzel',Georgia,serif}
+.os{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase}
+.pf{font-family:'Playfair Display',Georgia,serif;font-style:italic}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:4px;font:700 13px/1 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1.5px solid #E6C25A;box-sizing:border-box}
+.btn-g{background:#D4AF37;color:#0B0B0B}.btn-g:hover{background:#E6C350;color:#0B0B0B}
+.btn-o{background:transparent;color:#F5F1E6}.btn-o:hover{background:rgba(212,175,55,.12);color:#F5F1E6}
+.card{border:1px solid rgba(212,175,55,.5);background:#14110D;border-radius:6px}
+.ph{position:relative;background:radial-gradient(ellipse at 50% 42%,#2B2110 0%,#15110A 58%,#0B0B0B 100%);border:1px solid rgba(212,175,55,.4);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ph .lbl{position:absolute;left:12px;bottom:10px;font:600 11px 'Montserrat',sans-serif;letter-spacing:.1em;color:#C9B98F;text-transform:uppercase}
+.nav a{color:#F5F1E6;text-decoration:none;font:600 12px 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:12px 4px}
+.nav a:hover{color:#D4AF37}
+.muted{color:#C9BFA8}
+.deco{background:linear-gradient(rgba(11,11,11,.82),rgba(11,11,11,.9)),url(/_blob/47a9bb375ca6ba848292a6d23c64798a) center/cover}
+.pic{position:relative;overflow:hidden;border:1px solid rgba(212,175,55,.45)}
+
+.lng{min-height:40px;min-width:44px;background:transparent;color:#C9BFA8;border:none;font:700 12px 'Montserrat',sans-serif;letter-spacing:.1em;cursor:pointer}.lng.on{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%);color:#0B0B0B}
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="sb" style="width:100%;min-height:100vh">
+
+<!-- HEADER -->
+<header style="border-bottom:1px solid rgba(212,175,55,.35);background:#0B0B0B">
+<div style="max-width:1320px;margin:0 auto;padding:14px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">
+<a href="Main.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+<img src="/_blob/a71b4a949fb1790e6e0dbdf484cbdf18" alt="Street Boys — It’s not a cult" style="height:50px;width:auto;display:block">
+</a>
+<nav class="nav" aria-label="Main" style="display:flex;flex-wrap:wrap;gap:16px">
+<a href="Main.dc.html" style="color:#D4AF37;border-bottom:2px solid #E6C25A">{{ t.k0 }}</a>
+<a href="Web-Menu.dc.html">{{ t.k1 }}</a>
+<a href="#story">{{ t.k2 }}</a>
+<a href="Web-Catering.dc.html">{{ t.k3 }}</a>
+<a href="#gallery">{{ t.k4 }}</a>
+<a href="#visit">{{ t.k5 }}</a>
+</nav>
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+<div role="group" aria-label="Language / Kieli" style="display:flex;border:1px solid rgba(212,175,55,.55);border-radius:4px;overflow:hidden"><button type="button" class="{{ fiCls }}" aria-pressed="{{ isFi }}" onClick="{{ setFi }}">FI</button><button type="button" class="{{ enCls }}" aria-pressed="{{ isEn }}" onClick="{{ setEn }}">EN</button></div>
+<a class="btn btn-o" href="Web-Reserve.dc.html">{{ t.k6 }}</a>
+<a class="btn btn-g" href="Web-Checkout.dc.html">{{ t.k7 }}</a>
+</div>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="deco" style="position:relative;overflow:hidden;border-bottom:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:72px 32px 64px;display:flex;flex-wrap:wrap;align-items:center;gap:48px">
+<div style="flex:1 1 460px;min-width:0">
+<p style="margin:0 0 18px;font:600 13px 'Montserrat';letter-spacing:.18em;color:#D4AF37">{{ t.k8 }}</p>
+<h1 class="os" style="margin:0;font-size:84px;line-height:.95;font-weight:700;color:#F5F1E6;letter-spacing:.01em">{{ t.k9 }}<br>{{ t.k10 }}</h1>
+<p class="pf" style="margin:10px 0 0;font-size:52px;line-height:1.1;color:#D4AF37">{{ t.k11 }}</p>
+<p class="muted" style="margin:26px 0 0;font-size:18px;line-height:1.6;max-width:480px">{{ t.k12 }}</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:32px">
+<a class="btn btn-g" href="Web-Menu.dc.html">{{ t.k13 }} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="btn btn-o" href="Web-Reserve.dc.html">{{ t.k6 }}</a>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-top:28px;font-size:14px">
+<span style="width:10px;height:10px;border-radius:50%;background:#5FD08A"></span>
+<span><strong>{{ t.k14 }}</strong> <span class="muted">{{ t.k15 }}</span></span>
+</div>
+</div>
+<div class="pic" style="flex:1 1 520px;min-width:0;height:560px;border-radius:8px"><img src="/_blob/ba4e0d72d87a6745741eb981e2fc6cb7" alt="Double cheese smashburger wrapped in paper" style="width:100%;height:100%;object-fit:cover;display:block"><span class="cz" style="position:absolute;top:22px;right:24px;font-size:13px;letter-spacing:.2em;color:#D4AF37;border:1px solid #E6C25A;padding:8px 12px;background:rgba(11,11,11,.7)">{{ t.k16 }}</span></div>
+</div>
+<div style="border-top:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:22px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+<div style="display:flex;align-items:center;gap:14px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" aria-hidden="true"><path d="M4 11h16a8 7 0 0 0-16 0Z"/><path d="M3 14h18"/><path d="M4 17h16v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/></svg><span class="os" style="font-size:18px;letter-spacing:.06em">{{ t.k17 }}</span></div>
+<div style="display:flex;align-items:center;gap:14px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" aria-hidden="true"><path d="M5 10l1.6 10h10.8L19 10Z"/><path d="M8 10V4M11 10V3M14 10V4M17 10V6"/></svg><span class="os" style="font-size:18px;letter-spacing:.06em">{{ t.k18 }}</span></div>
+<div style="display:flex;align-items:center;gap:14px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span class="os" style="font-size:18px;letter-spacing:.06em">{{ t.k19 }}</span></div>
+<div style="display:flex;align-items:center;gap:14px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" aria-hidden="true"><path d="M6 4h12l3 5-9 11L3 9Z"/><path d="M3 9h18M9 4l3 16M15 4l-3 16"/></svg><span class="os" style="font-size:18px;letter-spacing:.06em">{{ t.k20 }}</span></div>
+</div>
+</div>
+</section>
+
+<!-- MENU HIGHLIGHTS -->
+<section style="max-width:1280px;margin:0 auto;padding:88px 32px">
+<div style="display:flex;align-items:center;justify-content:center;gap:20px"><span style="width:80px;height:1px;background:#D4AF37"></span><h2 class="cz" style="margin:0;font-size:46px;color:#D4AF37;letter-spacing:.06em">{{ t.k21 }}</h2><span style="width:80px;height:1px;background:#D4AF37"></span></div>
+<p class="muted" style="text-align:center;margin:14px 0 40px;font-size:17px">{{ t.k22 }}</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+<article class="card" style="overflow:hidden">
+<div class="pic" style="height:260px;border:none;border-bottom:1px solid rgba(212,175,55,.4)"><img src="/_blob/c868b67d15312beebc91c2dbfd2e76a4" alt="El Classico" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;top:14px;left:14px;background:#D4AF37;color:#0B0B0B;font:700 11px 'Montserrat';letter-spacing:.1em;padding:6px 10px;border-radius:3px">{{ t.k23 }}</span></div>
+<div style="padding:22px 24px 24px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><h3 class="os" style="margin:0;font-size:26px;color:#D4AF37">El Classico</h3><span class="os" style="font-size:26px">€12</span></div>
+<p class="muted" style="margin:10px 0 20px;font-size:15px;line-height:1.55">{{ t.k24 }}</p>
+<a class="btn btn-o" href="Web-Checkout.dc.html" style="width:100%">{{ t.k25 }}</a>
+</div>
+</article>
+<article class="card" style="overflow:hidden">
+<div class="pic" style="height:260px;border:none;border-bottom:1px solid rgba(212,175,55,.4)"><img src="/_blob/def2aa932c4fe8dab3e4a12ad6caafe2" alt="Erkin S#%tana" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;top:14px;left:14px;background:#8E2A1E;color:#F5F1E6;font:700 11px 'Montserrat';letter-spacing:.1em;padding:6px 10px;border-radius:3px">{{ t.k26 }}</span></div>
+<div style="padding:22px 24px 24px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><h3 class="os" style="margin:0;font-size:26px;color:#D4AF37">Erkin S#%tana</h3><span class="os" style="font-size:26px">€12</span></div>
+<p class="muted" style="margin:10px 0 20px;font-size:15px;line-height:1.55">{{ t.k27 }}</p>
+<a class="btn btn-o" href="Web-Checkout.dc.html" style="width:100%">{{ t.k25 }}</a>
+</div>
+</article>
+<article class="card" style="overflow:hidden">
+<div class="pic" style="height:260px;border:none;border-bottom:1px solid rgba(212,175,55,.4)"><img src="/_blob/55cd4c4775f0156e1d182eaaa955bc68" alt="Chiponacho" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="padding:22px 24px 24px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><h3 class="os" style="margin:0;font-size:26px;color:#D4AF37">Chiponacho</h3><span class="os" style="font-size:26px">€12</span></div>
+<p class="muted" style="margin:10px 0 20px;font-size:15px;line-height:1.55">{{ t.k28 }}</p>
+<a class="btn btn-o" href="Web-Checkout.dc.html" style="width:100%">{{ t.k25 }}</a>
+</div>
+</article>
+</div>
+<div style="text-align:center;margin-top:36px"><a class="btn btn-g" href="Web-Menu.dc.html">{{ t.k29 }}</a></div>
+</section>
+
+<!-- ORDER & TRACK BAND -->
+<section style="background:#D4AF37;color:#0B0B0B">
+<div style="max-width:1280px;margin:0 auto;padding:56px 32px;display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:space-between">
+<div style="flex:1 1 380px">
+<h2 class="os" style="margin:0;font-size:46px;line-height:1">{{ t.k30 }}<br>{{ t.k31 }}</h2>
+<p style="margin:14px 0 0;font-size:16px;line-height:1.6;font-weight:500">{{ t.k32 }}</p>
+</div>
+<ol style="flex:2 1 560px;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
+<li style="border:2px solid #0B0B0B;border-radius:6px;padding:18px"><span class="os" style="font-size:34px">01</span><p style="margin:6px 0 0;font-weight:700">{{ t.k33 }}</p><p style="margin:4px 0 0;font-size:14px">{{ t.k34 }}</p></li>
+<li style="border:2px solid #0B0B0B;border-radius:6px;padding:18px"><span class="os" style="font-size:34px">02</span><p style="margin:6px 0 0;font-weight:700">{{ t.k35 }}</p><p style="margin:4px 0 0;font-size:14px">{{ t.k36 }}</p></li>
+<li style="border:2px solid #0B0B0B;border-radius:6px;padding:18px"><span class="os" style="font-size:34px">03</span><p style="margin:6px 0 0;font-weight:700">{{ t.k37 }}</p><p style="margin:4px 0 0;font-size:14px">{{ t.k38 }}</p></li>
+</ol>
+<a class="btn" href="Web-Checkout.dc.html" style="background:#0B0B0B;color:#D4AF37;border-color:#0B0B0B">{{ t.k39 }}</a>
+</div>
+</section>
+
+<!-- STORY -->
+<section id="story" style="max-width:1280px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px;align-items:center">
+<div class="pic" style="flex:1 1 480px;min-width:0;height:520px;border-radius:8px"><img src="/_blob/1271ab88cb1e25e9d298c149df06ea0c" alt="The Street Boys crew holding a smashburger" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="flex:1 1 420px;min-width:0">
+<p style="margin:0;font:600 13px 'Montserrat';letter-spacing:.18em;color:#D4AF37">{{ t.k40 }}</p>
+<h2 class="os" style="margin:12px 0 0;font-size:56px;line-height:1">{{ t.k41 }}</h2>
+<p class="pf" style="margin:8px 0 0;font-size:32px;color:#D4AF37">{{ t.k42 }}</p>
+<p class="muted" style="margin:24px 0 0;font-size:17px;line-height:1.7">{{ t.k43 }}</p>
+<p class="muted" style="margin:16px 0 0;font-size:17px;line-height:1.7">{{ t.k44 }}</p>
+<a class="btn btn-o" href="#visit" style="margin-top:30px">{{ t.k45 }}</a>
+</div>
+</section>
+
+<!-- EVENTS -->
+<section style="border-top:1px solid rgba(212,175,55,.35);border-bottom:1px solid rgba(212,175,55,.35);background:#100E0B">
+<div style="max-width:1280px;margin:0 auto;padding:88px 32px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+<div style="flex:1 1 420px;min-width:0">
+<p style="margin:0;font:600 13px 'Montserrat';letter-spacing:.18em;color:#D4AF37">{{ t.k46 }}</p>
+<h2 class="os" style="margin:12px 0 0;font-size:52px;line-height:1">{{ t.k47 }}<br>{{ t.k48 }}</h2>
+<ul style="list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:17px">
+<li style="display:flex;gap:12px;align-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.4" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>{{ t.k49 }}</li>
+<li style="display:flex;gap:12px;align-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.4" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>{{ t.k50 }}</li>
+<li style="display:flex;gap:12px;align-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.4" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>{{ t.k51 }}</li>
+</ul>
+<a class="btn btn-g" href="Web-Catering.dc.html" style="margin-top:32px">{{ t.k52 }}</a>
+</div>
+<div class="pic" style="flex:1 1 520px;min-width:0;height:420px;border-radius:8px"><img src="/_blob/c81f8eaa12d893637d6d1a0cd4190d3a" alt="Private event room with long table and screen" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:14px;bottom:12px;background:rgba(11,11,11,.8);color:#D4AF37;font:600 12px 'Montserrat';letter-spacing:.12em;padding:8px 12px">{{ t.k53 }}</span></div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="max-width:1280px;margin:0 auto;padding:88px 32px">
+<div style="display:flex;align-items:center;justify-content:center;gap:20px"><span style="width:80px;height:1px;background:#D4AF37"></span><h2 class="cz" style="margin:0;font-size:46px;color:#D4AF37;letter-spacing:.06em">{{ t.k4 }}</h2><span style="width:80px;height:1px;background:#D4AF37"></span></div>
+<div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+<div class="pic" style="height:260px;border-radius:6px"><img src="/_blob/c868b67d15312beebc91c2dbfd2e76a4" alt="Smashburger with apple salsa" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="pic" style="height:260px;border-radius:6px"><img src="/_blob/2ed8a6c3738c2825f1ee30a229efb3c8" alt="Seasoning patties on the grill" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="pic" style="height:260px;border-radius:6px"><img src="/_blob/def2aa932c4fe8dab3e4a12ad6caafe2" alt="The tower burger challenge" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="pic" style="height:260px;border-radius:6px"><img src="/_blob/e99c09245d9ef07ed587fd5188f638c5" alt="Patties on the flat-top" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="pic" style="height:260px;border-radius:6px"><img src="/_blob/974916053cbdbb45bb940831f5bccef0" alt="Pulled meat on the grill" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="pic" style="height:260px;border-radius:6px"><img src="/_blob/55cd4c4775f0156e1d182eaaa955bc68" alt="Digging in" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+</div>
+<p style="text-align:center;margin:28px 0 0"><a href="https://instagram.com/streetboys_kouvola" style="font-weight:600">{{ t.k54 }}</a></p>
+</section>
+
+<!-- CULT APP -->
+<section style="background:#14110D;border-top:1px solid rgba(212,175,55,.35);border-bottom:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:80px 32px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;justify-content:center">
+<div style="width:250px;height:500px;border:2px solid #E6C25A;border-radius:34px;padding:14px;box-sizing:border-box;background:#0B0B0B;flex:0 0 auto">
+<div style="height:100%;border-radius:22px;background:#0B0B0B;display:flex;flex-direction:column;gap:12px;padding:18px 14px;box-sizing:border-box">
+<p class="cz" style="margin:0;text-align:center;color:#D4AF37;font-weight:800;letter-spacing:.12em">CULT APP</p>
+<div style="border:1px solid #E6C25A;border-radius:10px;padding:12px;background:#1B160D"><p style="margin:0;font-size:11px;letter-spacing:.12em;color:#C9BFA8">{{ t.k55 }}</p><p class="os" style="margin:4px 0 0;font-size:28px;color:#D4AF37">Gold</p><p style="margin:6px 0 0;font-size:12px">{{ t.k56 }}</p></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+<span style="border:1px solid rgba(212,175,55,.5);border-radius:8px;height:56px"></span><span style="border:1px solid rgba(212,175,55,.5);border-radius:8px;height:56px"></span><span style="border:1px solid rgba(212,175,55,.5);border-radius:8px;height:56px"></span><span style="border:1px solid rgba(212,175,55,.5);border-radius:8px;height:56px"></span><span style="border:1px solid rgba(212,175,55,.5);border-radius:8px;height:56px"></span><span style="border:1px solid rgba(212,175,55,.5);border-radius:8px;height:56px"></span>
+</div>
+<div style="margin-top:auto;background:#D4AF37;color:#0B0B0B;border-radius:8px;padding:10px;font-size:12px;font-weight:700;text-align:center">{{ t.k57 }}</div>
+</div>
+</div>
+<div style="flex:1 1 420px;max-width:560px">
+<p style="margin:0;font:600 13px 'Montserrat';letter-spacing:.18em;color:#D4AF37">{{ t.k58 }}</p>
+<h2 class="os" style="margin:12px 0 0;font-size:52px;line-height:1">{{ t.k59 }}<br><span style="color:#D4AF37">{{ t.k60 }}</span></h2>
+<p class="muted" style="margin:20px 0 0;font-size:17px;line-height:1.7">{{ t.k61 }}</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
+<a class="btn btn-g" href="App-CultApp.dc.html">{{ t.k62 }}</a>
+<a class="btn btn-o" href="App-CultApp.dc.html">App Store</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" style="max-width:1280px;margin:0 auto;padding:88px 32px;display:flex;flex-wrap:wrap;gap:40px">
+<div style="flex:1 1 480px;min-width:0;height:420px;border:1px solid rgba(212,175,55,.45);border-radius:8px;background:#121110;position:relative;overflow:hidden">
+<svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" fill="none" stroke="#3A3326" stroke-width="2" aria-hidden="true"><path d="M0 120L600 60M0 260L600 300M140 0L220 420M380 0L340 420M0 360L600 180M480 0L560 420"/><path d="M0 40L260 420" stroke="#4A3F2A" stroke-width="6"/></svg>
+<div style="position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center"><svg width="48" height="48" viewBox="0 0 24 24" fill="#D4AF37" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg></div>
+<span style="position:absolute;left:14px;bottom:12px;font:600 11px 'Montserrat';letter-spacing:.1em;color:#C9BFA8">{{ t.k63 }}</span>
+</div>
+<div style="flex:1 1 420px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px">
+<div>
+<h2 class="cz" style="margin:0 0 18px;font-size:30px;color:#D4AF37">{{ t.k64 }}</h2>
+<p style="margin:0;font-size:16px;line-height:1.7">Kouvolan Kauppahalli<br>Kauppamiehenkatu 3<br>{{ t.k65 }}</p>
+<p style="margin:18px 0 0;font-size:16px;line-height:1.9"><a href="mailto:streetboyskouvola@gmail.com">streetboyskouvola@gmail.com</a><br><a href="https://instagram.com/streetboys_kouvola">Instagram @streetboys_kouvola</a><br><a href="https://www.facebook.com/profile.php?id=61556643252328">Facebook @streetboys</a></p>
+<a class="btn btn-o" href="https://www.google.com/maps/search/?api=1&amp;query=Kouvolan+Kauppahalli+Kauppamiehenkatu+3+Kouvola" style="margin-top:22px">{{ t.k66 }}</a>
+</div>
+<div>
+<h2 class="cz" style="margin:0 0 18px;font-size:30px;color:#D4AF37">{{ t.k67 }}</h2>
+<table style="border-collapse:collapse;font-size:16px;width:100%">
+<tbody>
+<tr><th scope="row" style="text-align:left;padding:7px 0;font-weight:600">{{ t.k68 }}</th><td class="muted" style="text-align:right">{{ t.k69 }}</td></tr>
+<tr><th scope="row" style="text-align:left;padding:7px 0;font-weight:600">{{ t.k70 }}</th><td class="muted" style="text-align:right">{{ t.k69 }}</td></tr>
+<tr style="color:#D4AF37"><th scope="row" style="text-align:left;padding:7px 0;font-weight:700">{{ t.k71 }}</th><td style="text-align:right;font-weight:700">15:00–21:00</td></tr>
+<tr><th scope="row" style="text-align:left;padding:7px 0;font-weight:600">{{ t.k72 }}</th><td style="text-align:right">15:00–21:00</td></tr>
+<tr><th scope="row" style="text-align:left;padding:7px 0;font-weight:600">{{ t.k73 }}</th><td style="text-align:right">15:00–22:00</td></tr>
+<tr><th scope="row" style="text-align:left;padding:7px 0;font-weight:600">{{ t.k74 }}</th><td style="text-align:right">12:00–22:00</td></tr>
+<tr><th scope="row" style="text-align:left;padding:7px 0;font-weight:600">{{ t.k75 }}</th><td style="text-align:right">14:00–20:00</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid rgba(212,175,55,.35);background:#080808">
+<div style="max-width:1280px;margin:0 auto;padding:36px 32px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+<span class="cz" style="font-weight:800;letter-spacing:.14em;color:#D4AF37">STREET BOYS</span>
+<span class="muted" style="font-size:14px">{{ t.k76 }}</span>
+<nav class="nav" aria-label="Footer" style="display:flex;gap:18px;flex-wrap:wrap"><a href="Web-Menu.dc.html#allergens">{{ t.k77 }}</a><a href="Web-Catering.dc.html">{{ t.k3 }}</a><a href="Sys-Dashboard.dc.html">{{ t.k78 }}</a></nav>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4700}}'>
+class Component extends DCLogic {
+constructor(p) { super(p); this.state = Object.assign({ lang: 'en' }, this.state || {}); }
+componentDidMount() {
+try { const l = window.localStorage.getItem('sb-lang'); if (l && l !== this.state.lang) this.setState({ lang: l }); } catch (e) {}
+try { this._onStore = (e) => { if (e.key === 'sb-lang' && e.newValue) this.setState({ lang: e.newValue }); }; window.addEventListener('storage', this._onStore); } catch (e) {}
+}
+componentWillUnmount() { try { window.removeEventListener('storage', this._onStore); } catch (e) {} }
+setLang(l) { this.setState({ lang: l }); try { window.localStorage.setItem('sb-lang', l); } catch (e) {} }
+dict(fi) { return fi ? {"k70": "Ti", "k25": "Lisää tilaukseen", "k23": "SUOSIKKI", "k42": "Kasvanut kadulla.", "k67": "Aukioloajat", "k58": "CULT CLUB", "k61": "Kerää pisteitä jokaisesta tilauksesta, saat syntymäpäiväburgerin ja kuulet uutuuksista ensimmäisenä. Tilaa, varaa pöytä ja seuraa toimitusta yhdessä sovelluksessa.", "k63": "KARTTA · KOUVOLAN KAUPPAHALLI", "k65": "45100 Kouvola", "k77": "Allergeenit", "k27": "Habaneromajoneesia, smashpihvi, tulista juustokastiketta, mansikka-habanero-BBQ:ta ja pickle de galloa.", "k66": "Reittiohjeet", "k73": "Pe", "k6": "Varaa pöytä", "k38": "Seuraa kuljettajaa ovellesi asti", "k71": "Ke", "k14": "Avoinna tänään", "k37": "Livenä kartalla", "k53": "YKSITYISTILA · VARATTAVISSA", "k5": "Yhteystiedot", "k31": "Seuraa, kun se saapuu.", "k50": "Yritysjuhlat ja yksityistilaisuudet", "k54": "Lisää Instagramissa @streetboys_kouvola", "k64": "Tule käymään", "k17": "Smashburgerit", "k78": "Henkilökunta", "k56": "1 240 pistettä", "k59": "It’s not a cult.", "k15": "· 15.00–21.00 · Nouto ja kotiinkuljetus", "k51": "Catering-tarjottimet 10–200 hengelle", "k2": "Tarinamme", "k43": "Street Boys syntyi intohimosta hyvään ruokaan, katukulttuuriin ja rohkeisiin makuihin. Smashaamme jokaisen pihvin tilauksesta paistolevyllä, käytämme vain kotimaista lihaa ja teemme kaikki kastikkeet itse.", "k35": "Grillillä", "k29": "Koko ruokalista", "k44": "Löydät meidät Kouvolan Kauppahallista — ja ruokarekan kanssa tapahtumista ympäri Kymenlaaksoa.", "k62": "Lataa Google Playsta", "k8": "KOUVOLA · KAUPPAHALLI · KATURUOKA", "k69": "Suljettu", "k48": "juhliisi.", "k41": "Syntynyt Kouvolassa.", "k0": "Etusivu", "k9": "Ei vain", "k39": "Aloita tilaus", "k46": "TAPAHTUMAT JA CATERING", "k33": "Tilaa ja maksa", "k47": "Tuo rekka", "k18": "Loaded fries", "k55": "CULT-KORTTI", "k75": "Su", "k26": "TULINEN", "k72": "To", "k74": "La", "k49": "Festivaalit ja yleisötapahtumat", "k10": "burgeri.", "k52": "Pyydä tarjous", "k1": "Ruokalista", "k11": "Se on katukulttuuria.", "k36": "Keittiö vahvistaa valmistumisajan", "k30": "Tilaa netistä.", "k13": "Katso ruokalista", "k40": "TARINAMME", "k12": "Legendaariset smashburgerit perunabriossilla, loaded fries ja talon omat kastikkeet — 100 % kotimaista lihaa, valmistettuna tilauksesta Kouvolan Kauppahallissa.", "k21": "Smash-lista", "k32": "Nouto Kauppahallista tai kotiinkuljetus Kouvolassa — seuraa tilausta grilliltä ovelle asti.", "k7": "Tilaa nyt", "k3": "Catering", "k28": "Chipotlemajoneesia, smashpihvi, cheddarkastiketta, jalapeñoja, rubiinihilloketta ja nachoja.", "k34": "Kortti, MobilePay, Apple / Google Pay", "k19": "Ruokarekka ja catering", "k20": "Cult Club -edut", "k68": "Ma", "k22": "Jokainen burgeri 12 € perunabriossilla. Vain kotimaista lihaa, kastikkeet itse tehtyjä.", "k60": "Liity silti.", "k57": "CULT-JÄSENET ENSIN", "k24": "Talon majoneesia, salaattia, tomaattia, smashpihvi, cheddarkastiketta, savupekonia ja marinoitua punasipulia.", "k4": "Galleria", "k45": "Tutustu porukkaan", "k76": "© 2026 Street Boys Kouvola · It’s not a cult.", "k16": "KOTIMAINEN LIHA"} : {"k70": "Tue", "k25": "Add to order", "k23": "BESTSELLER", "k42": "Raised on the street.", "k67": "Opening hours", "k58": "THE CULT CLUB", "k61": "Collect points on every order, get a birthday burger, and hear about new drops before anyone else. Order, book tables and track deliveries in one app.", "k63": "MAP · KOUVOLAN KAUPPAHALLI", "k65": "45100 Kouvola, Finland", "k77": "Allergens", "k27": "Habanero mayo, smash patty, spicy cheese sauce, strawberry-habanero BBQ, pickle de gallo.", "k66": "Get directions", "k73": "Fri", "k6": "Book a table", "k38": "Follow your driver to the door", "k71": "Wed", "k14": "Open today", "k37": "Live on the map", "k53": "PRIVATE ROOM · BOOKABLE", "k5": "Contact", "k31": "Watch it come to you.", "k50": "Company parties and private events", "k54": "More on Instagram @streetboys_kouvola", "k64": "Visit us", "k17": "Smashburgers", "k78": "Staff login", "k56": "1,240 points", "k59": "It’s not a cult.", "k15": "· 15:00–21:00 · Pickup & delivery available", "k51": "Catering trays for 10–200 guests", "k2": "Our story", "k43": "Street Boys started from a passion for great food, street culture and bold flavours. We smash every patty to order on the flat-top, use only domestic meat and make every sauce in-house.", "k35": "On the grill", "k29": "See the full menu", "k44": "Find us at Kouvolan Kauppahalli — and at festivals across Kymenlaakso with the food truck.", "k62": "Get it on Google Play", "k8": "KOUVOLA · KAUPPAHALLI · STREET FOOD", "k69": "Closed", "k48": "to your party.", "k41": "Born in Kouvola.", "k0": "Home", "k9": "Not just", "k39": "Start an order", "k46": "EVENTS & CATERING", "k33": "Order & pay", "k47": "Bring the truck", "k18": "Loaded fries", "k55": "CULT CARD", "k75": "Sun", "k26": "HOT", "k72": "Thu", "k74": "Sat", "k49": "Festivals and public events", "k10": "a burger.", "k52": "Request a quote", "k1": "Menu", "k11": "It’s street culture.", "k36": "Kitchen confirms with a ready time", "k30": "Order online.", "k13": "View menu", "k40": "OUR STORY", "k12": "Legendary smashburgers on potato brioche, loaded fries and house-made sauces — 100% Finnish meat, made to order at Kouvolan Kauppahalli.", "k21": "The Smash List", "k32": "Pickup at Kauppahalli or delivery around Kouvola, with live status from grill to door.", "k7": "Order now", "k3": "Catering", "k28": "Chipotle mayo, smash patty, cheddar sauce, jalapeño, ruby onion jam, nachos.", "k34": "Card, MobilePay, Apple / Google Pay", "k19": "Food truck & catering", "k20": "Cult Club rewards", "k68": "Mon", "k22": "Every burger €12 on potato brioche. Domestic meat only, sauces made in-house.", "k60": "Join anyway.", "k57": "CULT MEMBERS FIRST", "k24": "House mayo, lettuce, tomato, smash patty, cheddar sauce, smoked bacon, pickled red onion.", "k4": "Gallery", "k45": "Meet the crew", "k76": "© 2026 Street Boys Kouvola · It’s not a cult.", "k16": "KOTIMAINEN LIHA"}; }
+renderVals() {
+const fi = (this.state || {}).lang === 'fi';
+return Object.assign({}, this.baseVals(), { t: this.dict(fi), isFi: fi, isEn: !fi, fiCls: fi ? 'lng on' : 'lng', enCls: fi ? 'lng' : 'lng on', setFi: () => this.setLang('fi'), setEn: () => this.setLang('en') });
+}
+
+baseVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Street Boys — Catering &amp; Food Truck</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0B0B}
+a{color:#D4AF37}a:hover{color:#F0CF62}
+.sb{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B}
+.cz{font-family:'Cinzel',Georgia,serif}
+.os{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase}
+.pf{font-family:'Playfair Display',Georgia,serif;font-style:italic}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:4px;font:700 13px/1 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1.5px solid #E6C25A;box-sizing:border-box}
+.btn-g{background:#D4AF37;color:#0B0B0B}.btn-g:hover{background:#E6C350;color:#0B0B0B}
+.btn-o{background:transparent;color:#F5F1E6}
+.card{border:1px solid rgba(212,175,55,.5);background:#14110D;border-radius:6px}
+.ph{position:relative;background:radial-gradient(ellipse at 50% 42%,#2B2110 0%,#15110A 58%,#0B0B0B 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ph .lbl{position:absolute;left:12px;bottom:10px;font:600 11px 'Montserrat';letter-spacing:.1em;color:#C9B98F;text-transform:uppercase}
+.nav a{color:#F5F1E6;text-decoration:none;font:600 13px 'Montserrat';letter-spacing:.1em;text-transform:uppercase;padding:12px 4px}
+.nav a:hover{color:#D4AF37}
+.muted{color:#C9BFA8}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600}
+.fld input,.fld select,.fld textarea{min-height:46px;background:#0B0B0B;border:1px solid rgba(212,175,55,.45);border-radius:4px;color:#F5F1E6;font:500 15px 'Montserrat';padding:0 14px}
+.fld textarea{min-height:96px;padding:12px 14px}
+
+.lng{min-height:40px;min-width:44px;background:transparent;color:#C9BFA8;border:none;font:700 12px 'Montserrat',sans-serif;letter-spacing:.1em;cursor:pointer}.lng.on{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%);color:#0B0B0B}
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="sb" style="width:100%;min-height:100vh">
+<header style="border-bottom:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+<a href="Main.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none"><img src="/_blob/a71b4a949fb1790e6e0dbdf484cbdf18" alt="Street Boys — It’s not a cult" style="height:56px;width:auto;display:block"></a>
+<nav class="nav" aria-label="Main" style="display:flex;flex-wrap:wrap;gap:22px"><a href="Main.dc.html">{{ t.k0 }}</a><a href="Web-Menu.dc.html">{{ t.k1 }}</a><a href="Web-Catering.dc.html" style="color:#D4AF37;border-bottom:2px solid #E6C25A">{{ t.k3 }}</a><a href="Main.dc.html">{{ t.k5 }}</a></nav>
+<a class="btn btn-g" href="Web-Checkout.dc.html">{{ t.k7 }}</a>
+<div role="group" aria-label="Language / Kieli" style="display:flex;border:1px solid rgba(212,175,55,.55);border-radius:4px;overflow:hidden"><button type="button" class="{{ fiCls }}" aria-pressed="{{ isFi }}" onClick="{{ setFi }}">FI</button><button type="button" class="{{ enCls }}" aria-pressed="{{ isEn }}" onClick="{{ setEn }}">EN</button></div>
+</div>
+</header>
+
+<section style="border-bottom:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:56px 32px;display:flex;flex-wrap:wrap;gap:44px;align-items:center">
+<div style="flex:1 1 420px;min-width:0">
+<p style="margin:0;font:600 13px 'Montserrat';letter-spacing:.18em;color:#D4AF37">{{ t.k219 }}</p>
+<h1 class="os" style="margin:12px 0 0;font-size:68px;line-height:.98">{{ t.k220 }}<br>{{ t.k221 }}</h1>
+<p class="pf" style="margin:10px 0 0;font-size:30px;color:#D4AF37">{{ t.k222 }}</p>
+<p class="muted" style="margin:20px 0 0;font-size:17px;line-height:1.7;max-width:520px">{{ t.k223 }}</p>
+<a class="btn btn-g" href="#quote" style="margin-top:28px">{{ t.k52 }}</a>
+</div>
+<div class="ph" style="flex:1 1 520px;min-width:0;height:440px;border:1px solid rgba(212,175,55,.4);border-radius:8px"><img src="/_blob/974916053cbdbb45bb940831f5bccef0" alt="Pulled meat cooking on the grill at an event" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:72px 32px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<article class="card" style="padding:26px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 19c0-3 2.5-5 5-5s5 2 5 5M13 19c0-2.2 1.4-4 3-4s4 1.6 4 4"/></svg><h2 class="os" style="margin:14px 0 6px;font-size:24px;color:#D4AF37">{{ t.k224 }}</h2><p class="muted" style="margin:0;font-size:15px;line-height:1.6">{{ t.k225 }}</p></article>
+<article class="card" style="padding:26px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.4" aria-hidden="true"><path d="M3 17h18M5 17a7 7 0 0 1 14 0M12 8V6M10 6h4"/></svg><h2 class="os" style="margin:14px 0 6px;font-size:24px;color:#D4AF37">{{ t.k226 }}</h2><p class="muted" style="margin:0;font-size:15px;line-height:1.6">{{ t.k227 }}</p></article>
+<article class="card" style="padding:26px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.4" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><h2 class="os" style="margin:14px 0 6px;font-size:24px;color:#D4AF37">{{ t.k228 }}</h2><p class="muted" style="margin:0;font-size:15px;line-height:1.6">{{ t.k229 }}</p></article>
+<article class="card" style="padding:26px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.4" aria-hidden="true"><path d="M6 4h12l3 5-9 11L3 9Z"/><path d="M3 9h18"/></svg><h2 class="os" style="margin:14px 0 6px;font-size:24px;color:#D4AF37">{{ t.k230 }}</h2><p class="muted" style="margin:0;font-size:15px;line-height:1.6">{{ t.k231 }}</p></article>
+</div>
+</section>
+
+<section id="quote" style="background:#100E0B;border-top:1px solid rgba(212,175,55,.35)">
+<div style="max-width:1280px;margin:0 auto;padding:72px 32px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+<div style="flex:1 1 340px;min-width:0">
+<h2 class="cz" style="margin:0;font-size:40px;color:#D4AF37">{{ t.k52 }}</h2>
+<p class="muted" style="margin:16px 0 0;font-size:16px;line-height:1.7">{{ t.k232 }}</p>
+<ol style="margin:28px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px">
+<li style="display:flex;gap:14px"><span class="os" style="font-size:26px;color:#D4AF37;min-width:36px">01</span><span>{{ t.k233 }}</span></li>
+<li style="display:flex;gap:14px"><span class="os" style="font-size:26px;color:#D4AF37;min-width:36px">02</span><span>{{ t.k234 }}</span></li>
+<li style="display:flex;gap:14px"><span class="os" style="font-size:26px;color:#D4AF37;min-width:36px">03</span><span>{{ t.k235 }}</span></li>
+</ol>
+</div>
+<form class="card" style="flex:2 1 560px;min-width:0;padding:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px" aria-label="Quote request">
+<label class="fld">{{ t.k236 }}<select><option>{{ t.k228 }}</option><option>{{ t.k226 }}</option><option>{{ t.k237 }}</option><option>{{ t.k238 }}</option></select></label>
+<label class="fld">{{ t.k164 }}<input value="Sat 6 Jun 2027"></label>
+<label class="fld">{{ t.k163 }}<input value="150"></label>
+<label class="fld">{{ t.k239 }}<input value="Kouvola, Kauppatori"></label>
+<label class="fld">{{ t.k156 }}<input value="Anna Laine"></label>
+<label class="fld">{{ t.k240 }}<input value="Kymi Events Oy"></label>
+<label class="fld">{{ t.k158 }}<input value="anna@example.fi"></label>
+<label class="fld">{{ t.k157 }}<input value="+358 50 000 0000"></label>
+<label class="fld" style="grid-column:1/-1">{{ t.k241 }}<textarea>Summer street festival, 12:00–20:00. Need vegan options and power on site?</textarea></label>
+<div style="grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+<span class="muted" style="font-size:13px">{{ t.k242 }} <a href="mailto:streetboyskouvola@gmail.com">streetboyskouvola@gmail.com</a></span>
+<button class="btn btn-g" type="button">{{ t.k243 }}</button>
+</div>
+</form>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1450}}'>
+class Component extends DCLogic {
+constructor(p) { super(p); this.state = Object.assign({ lang: 'en' }, this.state || {}); }
+componentDidMount() {
+try { const l = window.localStorage.getItem('sb-lang'); if (l && l !== this.state.lang) this.setState({ lang: l }); } catch (e) {}
+try { this._onStore = (e) => { if (e.key === 'sb-lang' && e.newValue) this.setState({ lang: e.newValue }); }; window.addEventListener('storage', this._onStore); } catch (e) {}
+}
+componentWillUnmount() { try { window.removeEventListener('storage', this._onStore); } catch (e) {} }
+setLang(l) { this.setState({ lang: l }); try { window.localStorage.setItem('sb-lang', l); } catch (e) {} }
+dict(fi) { return fi ? {"k226": "Catering-tarjottimet", "k237": "Ryhmävaraus", "k163": "Henkilöt", "k3": "Catering", "k233": "Lähetä lomake — se menee suoraan omistajan hallintapaneeliin", "k242": "Tai sähköpostilla", "k235": "Me tulemme, sytytämme grillin ja ruokimme porukan", "k238": "Yksityistilaisuus", "k219": "CATERING · RUOKAREKKA · YKSITYISTILAISUUDET", "k164": "Päivä", "k157": "Puhelin", "k234": "Saat tarjouksen ja vahvistat sen verkossa ennakkomaksulla", "k225": "6–40 henkeä Kauppahallissa. Valmis menu, varattu alue, yksi lasku tai jaettu.", "k232": "Kerro tapahtumastasi, niin vastaamme yhden arkipäivän kuluessa menuehdotuksilla ja hinnalla.", "k240": "Yritys (valinnainen)", "k229": "Festivaalit, markkinat, urheilutapahtumat ja yksityistilaisuudet ympäri Kymenlaaksoa.", "k231": "Varaa yksityistilamme — VIP-illat, peli-illat ja lanseeraukset omalla menulla.", "k228": "Ruokarekan vuokraus", "k158": "Sähköposti", "k243": "Lähetä pyyntö", "k52": "Pyydä tarjous", "k221": "luoksesi.", "k223": "Koko Street Boys -elämys pyörillä: rekka, grilli ja porukka. Tai burgeri- ja ranskalaistarjottimet suoraan ovellesi.", "k241": "Lisätiedot", "k220": "Tuomme kadun", "k1": "Ruokalista", "k5": "Yhteystiedot", "k236": "Tapahtuman tyyppi", "k222": "Festivaalit, toimistot, häät, lanseeraukset.", "k156": "Nimi", "k0": "Etusivu", "k224": "Ryhmävaraukset", "k239": "Paikka", "k227": "Miniburgerivadit, ranskalaiset ja kastikkeet toimistoille ja juhliin, 10–200 hengelle.", "k230": "Yksityistilaisuudet", "k7": "Tilaa nyt"} : {"k226": "Catering trays", "k237": "Group booking", "k163": "Guests", "k3": "Catering", "k233": "Send the form — it lands straight in the owner dashboard", "k242": "Or email", "k235": "We show up, fire up the grill and feed the crowd", "k238": "Private event", "k219": "CATERING · FOOD TRUCK · PRIVATE EVENTS", "k164": "Date", "k157": "Phone", "k234": "Get a quote and confirm online with a deposit", "k225": "6–40 guests at Kauppahalli. Set menu, reserved area, one bill or split.", "k232": "Tell us about the event and we’ll reply within one working day with menu options and a price.", "k240": "Company (optional)", "k229": "Festivals, markets, sports events and private hire across Kymenlaakso.", "k231": "Book our private room — VIP nights, game nights, launches with a custom menu.", "k228": "Food truck hire", "k158": "Email", "k243": "Send request", "k52": "Request a quote", "k221": "street to you.", "k223": "The full Street Boys experience on wheels: the truck, the grill, the crew. Or trays of burgers and fries delivered to your door.", "k241": "Details", "k220": "We bring the", "k1": "Menu", "k5": "Contact", "k236": "Event type", "k222": "Festivals, offices, weddings, launches.", "k156": "Name", "k0": "Home", "k224": "Group bookings", "k239": "Location", "k227": "Slider platters, fries and sauces for offices and parties, 10–200 guests.", "k230": "Private events", "k7": "Order now"}; }
+renderVals() {
+const fi = (this.state || {}).lang === 'fi';
+return Object.assign({}, this.baseVals(), { t: this.dict(fi), isFi: fi, isEn: !fi, fiCls: fi ? 'lng on' : 'lng', enCls: fi ? 'lng' : 'lng on', setFi: () => this.setLang('fi'), setEn: () => this.setLang('en') });
+}
+
+baseVals() { return {}; }
+}
+</script>
+</body>
+</html>

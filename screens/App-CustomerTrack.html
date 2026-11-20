@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cult App — Live order</title>
+<link rel="icon" href="../assets/img/logo-gold.svg">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>html,body{background:#050505}body{display:flex;justify-content:center;align-items:flex-start;padding:32px 0;min-height:100vh;box-sizing:border-box}#dc-root{box-shadow:0 0 0 2px #3A3020,0 30px 80px rgba(0,0,0,.6);border-radius:28px;overflow:hidden}</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-dc-template" id="dc-template">
+<helmet>
+<style>
+body{margin:0;background:#0B0B0B}
+.s{font-family:'Montserrat',system-ui,sans-serif;color:#F5F1E6;background:#0B0B0B;font-size:14px}
+.os{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.m{color:#B8AE98}
+.b{flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:10px;border:1.5px solid #E6C25A;background:transparent;color:#F5F1E6;font:700 13px 'Montserrat';letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.st{display:flex;gap:12px;align-items:flex-start}
+.d{width:22px;height:22px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+
+/* metallic gold */
+[style*="color:#D4AF37"]:not([style*="background"]):not(tr):not(svg){background:linear-gradient(180deg,#FFF4B8 0%,#F6D877 30%,#DDB343 52%,#B07F22 72%,#E9C45E 88%,#FCE9A6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(246,212,110,.30))}
+[style*="background:#D4AF37"],.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,.bar,.bump[style*="#D4AF37"]{background:linear-gradient(180deg,#FFF0AE 0%,#F2D06B 28%,#D9AE3E 52%,#B4862A 70%,#E7C25C 88%,#FBE6A0 100%) !important;border-color:#F2D06B !important}
+.btn-g,.bg,button.tab.on,.cat.on,.seg.on,.nav a.on,.day.sel,.slot.sel,.tip.on,.pay.g,a[style*="background:#D4AF37"],button[style*="background:#D4AF37"]{box-shadow:inset 0 1px 0 rgba(255,250,220,.75),inset 0 -2px 0 rgba(120,80,10,.35),0 4px 20px rgba(240,200,90,.28)}
+.btn-g:hover,.bg:hover{filter:brightness(1.08)}
+</style>
+</helmet>
+<div class="s" style="width:390px;height:844px;display:flex;flex-direction:column;overflow:hidden">
+<div style="height:340px;position:relative;background:#121110;overflow:hidden" role="img" aria-label="Map: driver Mikko 1.1 km away">
+<svg viewBox="0 0 390 340" style="position:absolute;inset:0;width:100%;height:100%" fill="none" aria-hidden="true"><g stroke="#2A261E" stroke-width="2"><path d="M0 60L390 30M0 170L390 190M0 280L390 260M70 0L100 340M200 0L180 340M310 0L330 340"/></g><path d="M0 120L390 100" stroke="#3E3624" stroke-width="10"/><path d="M60 300 L90 180 L190 175 L210 95 L320 110" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 9"/><path d="M60 300 L90 180 L190 175" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/></svg>
+<div style="position:absolute;left:170px;top:155px;width:40px;height:40px;border-radius:50%;background:#D4AF37;box-shadow:0 0 0 9px rgba(212,175,55,.25);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="2" aria-hidden="true"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/></svg></div>
+<div style="position:absolute;left:304px;top:78px"><svg width="34" height="34" viewBox="0 0 24 24" fill="#F5F1E6" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg></div>
+<a href="App-CultApp.html" aria-label="Back" style="position:absolute;left:14px;top:14px;width:44px;height:44px;border-radius:50%;background:rgba(11,11,11,.85);border:1px solid rgba(212,175,55,.5);display:flex;align-items:center;justify-content:center;color:#D4AF37;text-decoration:none;font-size:22px">‹</a>
+</div>
+<div style="flex:1;margin-top:-22px;background:#0B0B0B;border-radius:20px 20px 0 0;border-top:1px solid rgba(212,175,55,.5);padding:18px;position:relative;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end">
+<div><p class="m" style="margin:0;font-size:12px;letter-spacing:.1em">ORDER #1047</p><p class="os" style="margin:2px 0 0;font-size:26px">On the way</p></div>
+<div style="text-align:right"><p class="os" style="margin:0;font-size:36px;color:#D4AF37;line-height:1">12 min</p><p class="m" style="margin:2px 0 0;font-size:12px">ETA 18:45</p></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="st"><span class="d" style="background:#D4AF37"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="4" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></span><span style="flex:1">Order received</span><span class="m">18:14</span></div>
+<div class="st"><span class="d" style="background:#D4AF37"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="4" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></span><span style="flex:1">On the grill</span><span class="m">18:16</span></div>
+<div class="st"><span class="d" style="background:#D4AF37"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="4" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></span><span style="flex:1">Packed &amp; picked up</span><span class="m">18:33</span></div>
+<div class="st"><span class="d" style="border:2px solid #E6C25A;box-shadow:0 0 0 4px rgba(212,175,55,.2)"></span><span style="flex:1;color:#D4AF37;font-weight:700">Out for delivery</span><span class="m">now</span></div>
+<div class="st"><span class="d" style="border:2px solid #4A4232"></span><span class="m" style="flex:1">Delivered</span></div>
+</div>
+<div style="display:flex;gap:12px;align-items:center;padding:12px;border:1px solid rgba(212,175,55,.4);border-radius:12px">
+<span class="os" style="width:44px;height:44px;border-radius:50%;background:#2A2A2A;border:1.5px solid #E6C25A;display:flex;align-items:center;justify-content:center;color:#D4AF37;font-size:18px">M</span>
+<span style="flex:1"><strong>Mikko</strong><br><span class="m" style="font-size:12px">Black Toyota Yaris · 1.1 km</span></span>
+</div>
+<div style="display:flex;gap:10px"><a class="b" href="tel:+358401234567">Call</a><a class="b" href="sms:+358401234567">Chat</a></div>
+<p class="m" style="margin:0;font-size:12px">You’ll get a push notification when Mikko is at the door. +44 Cult points on delivery.</p>
+</div>
+</div>
+</script>
+<script type="text/x-dc-logic" id="dc-logic" data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+<script src="../assets/dc-runtime.js"></script>
+</body>
+</html>
